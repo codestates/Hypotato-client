@@ -1,13 +1,23 @@
+.sigin_main {
+  padding-right: 10%;
+}
+
 .signin_title {
   position: absolute;
-  left: 39%;
-  bottom: 50%;
+  left: 527px;
+  bottom: 430px;
+  font-size: 7vh;
+  font-weight: bold;
+  text-shadow: 3px 10px 10px rgb(51, 47, 47);
+  color: #7c7979;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 .signin_subtitle {
   position: absolute;
-  left: 37%;
-  bottom: 45%;
+  left: 568px;
+  bottom: 395px;
+  font-size: 2.5vh;
 }
 
 .signin_modal {
@@ -16,6 +26,70 @@
   justify-content: center;
   align-items: center;
   width: 400px;
-  height: 400px;
+  height: 500px;
   flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 30px;
+  box-shadow: 3px 10px 10px #7c7979;
+  padding-top: 30px;
+}
+
+.sign_password,
+.sign_email {
+  font-size: 45px;
+  text-align: center;
+  font-weight: bold;
+  color: #7c7979;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.sign_password {
+  margin-top: -25px;
+}
+
+input {
+  margin: 10px;
+  /* width: 40%;
+  height: 6%; */
+  width: 300px;
+  height: 45px;
+  border-radius: 8px;
+  background-color: #f2e6ce;
+  box-shadow: 3px 2px 1px #7c7979;
+}
+
+.sign_google {
+  width: 230px;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 20px;
+  box-shadow: 2px 1px 0px #7c7979;
+  color: #7c7979;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-color: rgb(244, 196, 196);
+}
+
+.sign_signin {
+  margin-right: 40px;
+  width: 120px;
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: 2px 1px 0px #7c7979;
+  color: #7c7979;
+  font-weight: bold;
+  font-size: 25px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-color: #e4f6aa;
+}
+
+.sign_signup {
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  box-shadow: 2px 1px 0px #7c7979;
+  font-weight: bold;
+  font-size: 17px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: #7c7979;
+  background-color: #e4f6aa;
 }

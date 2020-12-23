@@ -10,7 +10,7 @@ class Signin extends React.Component {
       passWord: "",
     };
   }
-
+  
   loginHandler(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
@@ -22,7 +22,7 @@ class Signin extends React.Component {
       <>
         <div className="sigin_main">
           <div className="signin_title">hypotato</div>
-          <div className="signin_subtitle">How is your potato</div>
+          <div className="signin_subtitle">How is your potato?</div>
           <img
             className="signin_potato"
             src={potatoLogo}
@@ -31,26 +31,31 @@ class Signin extends React.Component {
         </div>
 
         <div className="signin_modal">
-          <div>Email</div>
-          <input
-            name="email"
-            type="text"
-            value={email}
-            onChange={this.loginHandler.bind(this)}
-          />
-          <div>Password</div>
-          <input
-            name="passWord"
-            type="text"
-            value={passWord}
-            onChange={this.loginHandler.bind(this)}
-          />
           <div>
-            <button>connect with google</button>
+            <div className="sign_email">Email</div>
+            <input
+              name="email"
+              type="text"
+              value={email}
+              onChange={this.loginHandler.bind(this)}
+            />
+          </div>
+
+          <div>
+            <div className="sign_password">Password</div>
+            <input
+              name="passWord"
+              type="text"
+              value={passWord}
+              onChange={this.loginHandler.bind(this)}
+            />
+          </div>
+          <div>
+            <button className="sign_google">connect with google</button>
           </div>
           <span>
-            <button>Sign IN</button>
-            <button>Sign UP</button>
+            <button className="sign_signin">Sign IN</button>
+            <button className="sign_signup">Sign UP</button>
           </span>
         </div>
       </>
