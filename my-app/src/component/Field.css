@@ -1,0 +1,40 @@
+.field_profile {
+  display: flex;
+}
+
+.field_entire {
+  border-color: yellow;
+  width: 100%;
+  height: 100%;
+  border: solid;
+}
+
+.field_profile {
+  border: solid;
+  width: 200px;
+  height: 200px;
+}
+
+.field_profile_photo {
+  border: solid;
+  width: 200px;
+  height: 200px;
+}
+
+.field_potato_count {
+  border: solid;
+  width: 220px;
+}
+
+.field_categories {
+  border: solid;
+  width: 220px;
+}
+
+.field_body {
+  position: absolute;
+  justify-content: flex-end;
+  display: flex;
+  border: solid;
+  width: 400px;
+}

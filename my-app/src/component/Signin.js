@@ -9,14 +9,17 @@ class Signin extends React.Component {
       email: "",
       passWord: "",
     };
+
+    this.signInHandler = this.signInHandler.bind(this);
   }
-  
-  loginHandler(e) {
+
+  signInHandler(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   }
 
   render() {
+    const { signUpButtonHander, goToFieldHander } = this.props;
     const { email, passWord } = this.state;
     return (
       <>
@@ -34,29 +37,36 @@ class Signin extends React.Component {
           <div>
             <div className="sign_email">Email</div>
             <input
+              className="signin_input_mail"
               name="email"
               type="text"
               value={email}
-              onChange={this.loginHandler.bind(this)}
+              onChange={this.signInHandler}
             />
           </div>
 
           <div>
             <div className="sign_password">Password</div>
             <input
+              className="signin_input_pw"
               name="passWord"
-              type="text"
+              type="password"
               value={passWord}
-              onChange={this.loginHandler.bind(this)}
+              maxLength="14"
+              onChange={this.signInHandler}
             />
           </div>
           <div>
             <button className="sign_google">connect with google</button>
           </div>
-          <span>
-            <button className="sign_signin">Sign IN</button>
-            <button className="sign_signup">Sign UP</button>
-          </span>
+          <div className="buttons">
+            <button className="sign_signin" onClick={goToFieldHander}>
+              Sign IN
+            </button>
+            <button onClick={signUpButtonHander} className="sign_signup">
+              Sign UP
+            </button>
+          </div>
         </div>
       </>
     );
