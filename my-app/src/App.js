@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Signin from "./component/Signin";
 import Signup from "./component/Signup";
-import Field from "./component/Field";
+import Farm from "./component/Farm";
 import "./App.css";
 import "./reset.css";
 
@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <div className="body">
         {goToField ? (
-          <Field />
+          <Farm />
         ) : signup ? (
           <Signup />
         ) : (
