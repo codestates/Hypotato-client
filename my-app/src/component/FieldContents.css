@@ -1,23 +1,24 @@
 .field_content {
-  /* flex: 1; */
-  width: 300px;
+  flex: 1;
+  max-width: 300px;
+  min-width: 300px;
   height: 250px;
   margin: 10px 10px 10px 10px;
-  background-color: #edceed;
-  border: dotted;
-  border-radius: 10px;
+
+  border: solid #cdb18e;
+  border-radius: 40px;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  /* justify-content: center; */
+  margin-right: 15px;
+  box-shadow: 3px 2px 8px #7c7979;
 }
 
 .field_image {
   flex: 1;
   width: 250px;
-  height: 100px;
-  margin: 10px 5px 30px 5px;
-  text-align: center;
+  height: 105px;
+  margin: 10px 5px 10px 22px;
+  display: flex;
 }
 
 .field_name {
@@ -27,7 +28,7 @@
 
 .field_desc {
   flex: 1;
-  text-align: center;
+  text-align: start;
 }
 
 .field_potato_summary {
@@ -36,13 +37,13 @@
   justify-content: row;
 }
 
-.field_potato_image {
+.field_potato_summary_image {
   flex: 1;
   width: 1em;
   height: 1em;
 }
 
-.field_potato_count {
+.field_potato_summary_count {
   flex: 1;
   text-align: center;
 }
@@ -50,4 +51,49 @@
 .field_category {
   flex: 1;
   text-align: center;
+}
+
+.field_name,
+.field_desc,
+/* .field_potato_summary_count, */
+.field_summary_category {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.field_name_key,
+.field_desc_key,
+.field_summary_category_key {
+  display: flex;
+  background-color: yellowgreen;
+  border-radius: 30px;
+  width: 70px;
+  text-align: center;
+  height: 25px;
+  font-size: 14px;
+  padding-top: 3px;
+  margin-right: 7px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2.5px 2px 0px #7c7979;
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.field_name_value,
+.field_desc_value,
+.field_summary_category_value {
+  margin-top: 7px;
+}
+
+.field_potato_summary {
+  /* border: solid; */
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }

@@ -1,9 +1,7 @@
 * {
   box-sizing: border-box;
 }
-
 /* 윈도우 전체 셋팅 */
-
 .field_entire {
   position: fixed;
   top: 0;
@@ -14,113 +12,171 @@
   flex-direction: row;
   justify-content: center;
 }
-
 /* 화면 왼쪽 분할 부분 */
-
 .field_left {
   flex: 1;
   display: flex;
   flex-direction: column;
   /* border: solid; */
 }
-
 .field_profile {
   margin: 10px 10px 10px 10px;
   display: flex;
   flex: 3;
-  border: solid;
-  border-radius: 30px;
+  border-radius: 25px;
+  /* border-color: #cdb18e; */
+  border: solid #cdb18e;
+  box-shadow: 3px 5px 10px #7c7979;
 }
-
 .field_profile_photo {
   flex: 1;
   width: 200px;
 }
-
 .field_potato_count {
   margin: 10px 10px 10px 10px;
   display: flex;
   flex-direction: column;
   flex: 1;
-  border: solid;
-  border-radius: 30px;
+  /* background-color: #e3d1b4; */
+  border-radius: 25px;
+  align-items: center;
+  border: solid #cdb18e;
+  box-shadow: 3px 5px 10px #7c7979;
 }
-
 .field_potato_count_good {
   flex: 1;
   text-align: center;
-  margin-top: 6%;
-  font-size: 20px;
+  font-size: 18px;
+  background-color: #cdb18e;
+  margin: 10px 10px 10px 10px;
+  padding: 15px 10px 10px 10px;
+  border-radius: 40px;
+  color: wheat;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 3px 2px 0px #7c7979;
+  font-weight: bold;
 }
-
 .field_potato_count_bad {
   flex: 1;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
+  margin: 10px 10px 10px 10px;
+  background-color: #cdb18e;
+  padding: 15px 10px 10px 10px;
+  border-radius: 40px;
+  color: wheat;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 3px 2px 0px #7c7979;
+  font-weight: bold;
 }
-
 .field_categories {
   margin: 10px 10px 10px 10px;
-  flex: 4;
-  border: solid;
-  display: flexbox;
-  border-radius: 30px;
+  flex: 3;
+  /* background-color: #e3d1b4; */
+  display: flex;
+  border-radius: 25px;
+  flex-direction: column;
+  border: solid #cdb18e;
+  box-shadow: 3px 10px 10px #7c7979;
 }
-
 .field_categories_all,
 .field_categories_dev,
 .field_categories_travel,
 .field_categories_cook {
-  margin: 30px 30px 30px 30px;
+  margin: 15px 50px 15px 50px;
   padding: 10px 10px 10px 10px;
   flex: 1;
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
-  border: ridge;
+  /* border: inset; */
+  background-color: #cdb18e;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 3px 2.5px 0px #7c7979;
+  font-weight: bold;
 }
-
 /* 화면 오른쪽 분할 부분 */
-
 .field_right {
   flex: 4;
   /* border: solid; */
   display: flex;
   flex-direction: column;
 }
-
 /* 메뉴부분  */
 .field_right_menu {
-  margin: 10px 10px 10px 10px;
+  margin: 10px 10px 5px 10px;
   flex: 0.5;
-  border: solid;
-  border-radius: 30px;
+  background-color: #cdb18e;
+  border-radius: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  border: solid #cdb18e;
+  box-shadow: 3px 5px 10px #7c7979;
 }
-
 .field_right_menu_mypage,
 .field_right_menu_manual,
 .field_right_menu_logout {
-  margin: 25px 20px 10px 20px;
-  font-size: 20px;
-  font-family: "Nanum Gothic", sans-serif;
+  margin: 10px 20px 10px 20px;
+  font-size: 22px;
+  color: #cdb18e;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-color: #e3d1b4;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 14px 175px 10px 175px;
+  box-shadow: 3px 2.5px 0px #7c7979;
+  font-weight: bold;
 }
 
 .field_right_fields {
   margin: 10px 10px 10px 10px;
   /* width: 100%; */
   flex: 6;
-  border: solid;
-  border-radius: 30px;
-  display: flex;
+  /* background-color: #e3d1b4; */
+  overflow: auto;
+  border-radius: 25px;
+  border-color: black;
+  border: solid #cdb18e;
+  box-shadow: 3px 10px 10px #7c7979;
 }
 
 .field_right_contents {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
-  border: double;
   width: 100%;
+}
+
+.field_right_bar {
+  background-color: #cdb18e;
+  display: flex;
+  justify-content: flex-end;
+  height: 45px;
+  border-radius: 20px;
+  margin: 13px 50px 5px 50px;
+  box-shadow: 3px 2px 0px #7c7979;
+}
+
+.field_right_add_btn,
+.field_right_remove_btn {
+  height: 30px;
+  margin-top: 7.5px;
+  margin-right: 25px;
+  width: 100px;
+  padding-top: 4px;
+  border-radius: 30px;
+  box-shadow: 3px 2px 0px #7c7979;
+  font-size: 17px;
+  background-color: #e3d1b4;
+  color: #cdb18e;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-weight: bold;
 }

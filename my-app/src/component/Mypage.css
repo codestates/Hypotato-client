@@ -1,0 +1,42 @@
+.test {
+  margin: 10px 10px 10px 10px;
+  /* width: 100%; */
+  flex: 6;
+  /* background-color: #e3d1b4; */
+  overflow: auto;
+  border-radius: 25px;
+  border-color: black;
+  border: solid #cdb18e;
+  box-shadow: 3px 10px 10px #7c7979;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mypage_nickname,
+.mypage_email,
+.mypage_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mypage_nickname_key,
+.mypage_email_key,
+.mypage_info_key {
+  display: flex;
+  width: 170px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-radius: 20px;
+  padding-top: 5px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-weight: bold;
+  border: solid #cdb18e;
+  color: #7c7979;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
