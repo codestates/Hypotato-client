@@ -1,10 +1,10 @@
 import React from "react";
-import Mybat from "./Field";
+import Field from "./Field";
 import Mypage from "./Mypage";
 // import "./Field.css";
 // import potatoLogo from "../image/potato.png";
 
-class Field extends React.Component {
+class Farm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +21,7 @@ class Field extends React.Component {
 
   render() {
     const { myPage } = this.state;
-    return myPage ? <Mypage /> : <Mybat goToMyPage={this.goToMyPage} />;
+    return myPage ? <Mypage /> : <Field goToMyPage={this.goToMyPage} />;
   }
 }
-export default Field;
+export default Farm;
