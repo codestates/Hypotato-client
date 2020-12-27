@@ -83,10 +83,11 @@
   border-radius: 8px;
   font-size: 20px;
   box-shadow: 2px 1px 0px #7c7979;
-  color: #7c7979;
+  color: rgb(211, 250, 132);
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   background-color: rgb(244, 196, 196);
   margin-top: -10px;
+  font-weight: bold;
 }
 
 .sign_signin {
@@ -95,7 +96,7 @@
   height: 100px;
   border-radius: 20px;
   box-shadow: 2px 1px 0px #7c7979;
-  color: #7c7979;
+  color: rgb(249, 151, 116);
   font-weight: bold;
   font-size: 30px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -110,6 +111,6 @@
   font-weight: bold;
   font-size: 20px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: #7c7979;
+  color: rgb(249, 151, 116);
   background-color: #e4f6aa;
 }

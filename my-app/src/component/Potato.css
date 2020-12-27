@@ -1,0 +1,41 @@
+.potato_component_body {
+  display: flex;
+  flex: 1;
+  margin: 20px 10px 10px 50px;
+  border: solid;
+  max-width: 93%;
+  min-width: 93%;
+  min-height: 170px;
+}
+
+.potato_component_body_left {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  border: solid;
+}
+
+.potato_component_body_left_image {
+  width: 180px;
+}
+
+.potato_component_body_right {
+  flex: 6;
+  border: solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.potato_component_body_right_potato-url {
+  flex: 1;
+  border: solid;
+  border-radius: 20px;
+  margin: 10px 10px 10px 10px;
+}
+
+.potato_component_body_right_potato-desc {
+  flex: 1;
+  border: solid;
+  border-radius: 20px;
+  margin: 10px 10px 10px 10px;
+}
