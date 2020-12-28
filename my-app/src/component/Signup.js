@@ -1,6 +1,7 @@
 import React from "react";
 import "./Signup.css";
 import potatoLogo from "../image/potato.png";
+import axios from 'axios';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -45,6 +46,17 @@ class Signup extends React.Component {
       this.setState({ differ: true });
     } else {
       // 서버에 사인업 axios 요청.
+      axios({
+        method: 'post',
+        url: `http://localhost:4000/signup`,
+        withCredentials: true,
+        headers: {'Content-Type': 'application/json'},
+        data: {email: this.state.email, username: this.state.username, password: this.state.password, mobile: this.state.mobile},
+      })
+      .then(
+        
+      )
+
     }
   }
 

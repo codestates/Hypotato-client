@@ -2,7 +2,7 @@
   display: flex;
   flex: 1;
   margin: 20px 10px 10px 50px;
-  border: solid;
+  /* border: solid; */
   max-width: 93%;
   min-width: 93%;
   min-height: 170px;
@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   flex: 1;
-  border: solid;
+  /* border: solid; */
 }
 
 .potato_component_body_left_image {
@@ -21,13 +21,16 @@
 
 .potato_component_body_right {
   flex: 6;
-  border: solid;
+  /* border: solid; */
   display: flex;
   flex-direction: column;
 }
 
 .potato_component_body_right_potato-url {
   flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
   border: solid;
   border-radius: 20px;
   margin: 10px 10px 10px 10px;
@@ -35,7 +38,24 @@
 
 .potato_component_body_right_potato-desc {
   flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
   border: solid;
   border-radius: 20px;
+  margin: 10px 10px 10px 10px;
+}
+
+.potato_component_body_right_potato-url_text {
+  position: absolute;
+  font-family: "Cute Font", cursive;
+  font-size: 40px;
+  margin: 10px 10px 10px 10px;
+}
+
+.potato_component_body_right_potato-desc_text {
+  position: absolute;
+  font-family: "Cute Font", cursive;
+  font-size: 40px;
   margin: 10px 10px 10px 10px;
 }
