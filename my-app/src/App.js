@@ -4,6 +4,7 @@ import Signup from "./component/Signup";
 import Farm from "./component/Farm";
 import "./App.css";
 import "./reset.css";
+import axios from 'axios';
 
 class App extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class App extends Component {
       isLogin: false,
       signup: false, // 사인업버튼 클릭되면 true로 바뀌게
       goToField: false,
+      myInfo: "",
     };
 
     this.login = this.login.bind(this);
@@ -34,7 +36,7 @@ class App extends Component {
   goToFieldHander() {
     this.setState({
       goToField: true,
-    });
+    })
   }
 
   render() {
@@ -42,11 +44,11 @@ class App extends Component {
     return (
       <div className="body">
         {goToField ? (
-          <Farm />
+          <Farm myinfo={this.state.myinfo}/>
         ) : signup ? (
           <Signup />
         ) : (
-          <Signin
+          <Signin 
             goToFieldHander={this.goToFieldHander}
             signUpButtonHander={this.signUpButtonHander}
           />

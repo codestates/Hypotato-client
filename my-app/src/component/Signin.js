@@ -12,25 +12,11 @@ class Signin extends React.Component {
     };
 
     this.signInHandler = this.signInHandler.bind(this);
-    this.signInRequestHandler = this.signInRequestHandler.bind(this);
   }
 
   signInHandler(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-  }
-
-  // Sign in 버튼 눌렀을 때.
-  signInRequestHandler() {
-    const {email, passWord} = this.state;
-    axios({
-      method: 'post',
-      url: `https://hypotatoserveertest1.herokuapp.com/signin`,
-      withCredentials: true,
-      headers: {'Content-Type': 'application/json'},
-      data: {email: email, password: passWord },
-    })
-    .then((res)=> console.log(res))
   }
 
   render() {
@@ -75,7 +61,7 @@ class Signin extends React.Component {
             <button className="sign_google">connect with google</button>
           </div>
           <div className="buttons">
-            <button className="sign_signin" onClick={goToFieldHander} signInRequestHandler={this.signInRequestHandler} >
+            <button className="sign_signin" onClick={goToFieldHander} >
               Sign IN
             </button>
             <button onClick={signUpButtonHander} className="sign_signup">
