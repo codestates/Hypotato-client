@@ -34,9 +34,29 @@ class App extends Component {
   }
 
   goToFieldHander() {
-    this.setState({
-      goToField: true,
+    axios({
+      method: "post",
+      url: `https://hypotatoserveertest1.herokuapp.com/signin`,
+      data: { email: email, password: passWord },
     })
+    .then(
+      (res) => console.log(res)
+      )
+    .then(
+      axios({
+        method: "get",
+        url: `https://hypotatoserveertest1.herokuapp.com/userinfo`,
+      })
+    )
+    .then(res => console.log(res))
+    .then(
+      this.setState({
+        goToField: true,
+      })
+    )
+    .catch(
+      err => console.log(err)
+      );
   }
 
   render() {

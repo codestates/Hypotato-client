@@ -44,7 +44,7 @@ class Signup extends React.Component {
 
     if (passWord !== inspect) {
       this.setState({ differ: true });
-    } else if(this.state.passWord !== "" && this.state.inspect !== "") {
+    } else if(this.state.passWord !== "" &&this.state.inspect !== "") {
       // 서버에 사인업 axios 요청.
       axios({
         method: 'post',
