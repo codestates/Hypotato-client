@@ -78,7 +78,7 @@
   display: flex;
   font-weight: bold;
   color: #ffffff;
-  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
   font-size: 40px;
   margin-top: 5px;
   margin-left: -10px;
@@ -123,4 +123,8 @@
 .mypage_info_potato_value {
   margin-left: -10px;
   margin-right: 12px;
+}
+
+.mypage_info_field_value {
+  margin-left: -23px;
 }

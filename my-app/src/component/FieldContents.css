@@ -80,7 +80,8 @@
   justify-content: center;
   box-shadow: 2.5px 2px 0px #7c7979;
   color: yellow;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1.3px 0 black, 0 1.3px black, 1.3px 0 black, 0 -1.3px black;
+  font-weight: bold;
 }
 
 .field_name_value,

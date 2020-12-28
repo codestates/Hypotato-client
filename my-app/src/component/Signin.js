@@ -1,22 +1,23 @@
 import React from "react";
 import "./Signin.css";
 import potatoLogo from "../image/potato.png";
+// import axios from "axios";
 
 class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      passWord: "",
+      // email: "",
+      // passWord: "",
     };
 
-    this.signInHandler = this.signInHandler.bind(this);
+    // this.signInHandler = this.signInHandler.bind(this);
   }
 
-  signInHandler(e) {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
-  }
+  // signInHandler(e) {
+  //   const { name, value } = e.target;
+  //   this.setState({ [name]: value });
+  // }
 
   render() {
     const { signUpButtonHander, goToFieldHander } = this.props;
@@ -41,7 +42,7 @@ class Signin extends React.Component {
               name="email"
               type="text"
               value={email}
-              onChange={this.signInHandler}
+              onChange={this.props.signInHandler}
             />
           </div>
 
@@ -53,7 +54,7 @@ class Signin extends React.Component {
               type="password"
               value={passWord}
               maxLength="14"
-              onChange={this.signInHandler}
+              onChange={this.props.signInHandler}
             />
           </div>
           <div>

@@ -133,6 +133,7 @@
   padding: 14px 175px 10px 175px;
   box-shadow: 3px 2.5px 0px #7c7979;
   font-weight: bold;
+  position: sticky;
 }
 
 .field_right_fields {

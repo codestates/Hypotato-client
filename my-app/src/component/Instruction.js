@@ -34,7 +34,7 @@ const Instruction = () => {
           <div className="inst_modal">
             <div className="inst_title">How To Use Potato</div>
             <div className="inst_value">
-              <p>hypotato hype link + potato</p>
+              <p>" hypotato hype link + potato "</p>
               <p>즐겨찾기 농장 hypotato에 오신 여러분 환영합니다.</p>
               <p>이곳에서는 여러분의 즐겨찾기를 관리 할 수 있으며</p>
               <p>즐겨찾기는 “감자" 즐겨찾기 폴더는 “밭"으로 표현됩니다.</p>

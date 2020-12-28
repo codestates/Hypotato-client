@@ -21,7 +21,7 @@ class Field extends React.Component {
           {
             id: 55,
             fieldName: "Korea, South",
-            fieldDesc: "magnis dis parturient montes, nascetur ridiculus mus.",
+            fieldDesc: "magnis dis parturient montes,",
             category: "기술",
           },
           {

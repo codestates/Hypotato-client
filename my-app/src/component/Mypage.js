@@ -82,12 +82,16 @@ class Mypage extends Component {
                     <div className="mypage_info_value">
                       <div className="mypage_info_field_entire">
                         <img
+                          className="mypage_info_field_logo"
                           src={fieldImage}
                           alt=""
-                          width="200px"
+                          width="160px"
                           height="100px"
                         />
-                        <div> = {fieldInfo.field}</div>
+                        <div className="mypage_info_field_value">
+                          {" "}
+                          = {fieldInfo.field}
+                        </div>
                       </div>
                       <div className="mypage_info_potato_entire">
                         <img
