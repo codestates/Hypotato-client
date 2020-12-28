@@ -153,7 +153,12 @@ class Field extends React.Component {
             >
               마이페이지
             </div>
-            <div className="field_right_menu_manual">사용 설명서</div>
+            <div
+              className="field_right_menu_manual"
+              onClick={this.props.instructionHandler}
+            >
+              사용 설명서
+            </div>
             <div className="field_right_menu_logout">로그아웃</div>
           </div>
 
