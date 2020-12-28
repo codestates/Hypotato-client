@@ -37,7 +37,7 @@ class Signup extends React.Component {
   }
 
   signUpRequestHanlder() {
-    const { passWord, inspect } = this.state;
+    const { nickName, email, passWord, inspect } = this.state;
     // if (!passWord.match("^(?=.*[@$!%*?&])[@$!%*?&]{8,}$")) {
     //   this.setState({ pwCheck: false });
     // }
@@ -48,15 +48,12 @@ class Signup extends React.Component {
       // 서버에 사인업 axios 요청.
       axios({
         method: 'post',
-        url: `http://localhost:4000/signup`,
+        url: `https://hypotatoserveertest1.herokuapp.com/signup`,
         withCredentials: true,
         headers: {'Content-Type': 'application/json'},
-        data: {email: this.state.email, username: this.state.username, password: this.state.password, mobile: this.state.mobile},
+        data: {email: email, nickname: nickName, password: passWord },
       })
-      .then(
-        
-      )
-
+      .then((res)=> console.log(res));
     }
   }
 
