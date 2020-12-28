@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import potatoLogo from "../image/potato.png";
 import EditInfo from "./EditInfo";
 import fieldImage from "../image/field.png";
+import tresh from "../image/tresh.png";
 import "./Mypage.css";
 
 class Mypage extends Component {
@@ -79,15 +80,6 @@ class Mypage extends Component {
                   <div className="mypage_info">
                     <div className="mypage_info_key">Field Info</div>
                     <div className="mypage_info_value">
-                      <div className="mypage_info_potato_entire">
-                        <img
-                          src={potatoLogo}
-                          alt=""
-                          width="100px"
-                          height="100px"
-                        />
-                        <div> = {fieldInfo.goodPotato}</div>
-                      </div>
                       <div className="mypage_info_field_entire">
                         <img
                           src={fieldImage}
@@ -96,6 +88,31 @@ class Mypage extends Component {
                           height="100px"
                         />
                         <div> = {fieldInfo.field}</div>
+                      </div>
+                      <div className="mypage_info_potato_entire">
+                        <img
+                          src={potatoLogo}
+                          alt=""
+                          width="100px"
+                          height="100px"
+                        />
+                        <div className="mypage_info_potato_value">
+                          {" "}
+                          = {fieldInfo.goodPotato}
+                        </div>
+                      </div>
+                      <div className="mypage_info_tresh_entire">
+                        <img
+                          className="mypage_info_tresh_logo"
+                          src={tresh}
+                          alt=""
+                          width="75px"
+                          height="110px"
+                        />
+                        <div className="mypage_info_tresh_value">
+                          {" "}
+                          = {fieldInfo.badPotato}
+                        </div>
                       </div>
                     </div>
                   </div>

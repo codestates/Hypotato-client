@@ -20,7 +20,8 @@
   justify-content: center;
   flex-direction: column;
   /* border: solid red; */
-  margin-top: 150px;
+  margin-top: 110px;
+  margin-left: 150px;
 }
 
 .mypage_nickname,
@@ -71,7 +72,7 @@
   color: #ffffff;
 }
 .mypage_info_value {
-  width: 550px;
+  width: 700px;
   height: 300px;
   border-radius: 20px;
   display: flex;
@@ -83,6 +84,7 @@
   margin-left: -10px;
   padding: 10px 10px 10px 10px;
   align-items: flex-start;
+  /* border: solid blue; */
 }
 
 .mypage_edit_info {
@@ -101,11 +103,28 @@
 }
 
 .mypage_info_potato_entire,
-.mypage_info_field_entire {
+.mypage_info_field_entire,
+.mypage_info_tresh_entire {
   display: flex;
   align-items: center;
 }
 
 .mypage_info_key {
+  margin-right: 12px;
+}
+
+.mypage_info_tresh_logo {
+  /* padding-top: -10px; */
+}
+
+.mypage_info_tresh_entire {
+  margin-top: -12px;
+}
+.mypage_info_tresh_value {
+  margin-top: 12px;
+}
+
+.mypage_info_potato_value {
+  margin-left: -10px;
   margin-right: 12px;
 }
