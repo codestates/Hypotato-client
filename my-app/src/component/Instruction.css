@@ -20,7 +20,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 700px;
+  height: 750px;
   margin-top: -50px;
 }
 
@@ -29,27 +29,34 @@
   flex: 1;
   justify-content: center;
   align-items: center;
-  font-size: 70px;
+  font-size: 72px;
   text-shadow: -3.5px 0 black, 0 3.5px black, 3.5px 0 black, 0 -3.5px black;
   color: yellowgreen;
   font-weight: bold;
+  background-color: rgb(248, 248, 90);
+  border-radius: 100px;
+  width: 650px;
+  margin-top: 45px;
+  padding-top: 10px;
+  border: solid black;
+  box-shadow: 5px 4px 0px #7c7979;
 }
 
 .inst_value {
   display: flex;
-  border: solid #cdb18e;
+  border: solid black;
   display: flex;
-  flex: 4;
-  width: 800px;
+  flex: 7;
+  width: 750px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 300px;
+  height: 900px;
   border-radius: 20px;
   display: flex;
   font-weight: bold;
   color: #ffffff;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  text-shadow: -2.5px 0 black, 0 2.5px black, 2.5px 0 black, 0 -2.5px black;
   font-size: 30px;
   margin-top: 5px;
   margin-left: -10px;
@@ -57,5 +64,5 @@
   text-align: center;
   line-height: 100px;
   box-shadow: 3px 10px 10px #7c7979;
-  margin-top: -20px;
+  margin-top: 40px;
 }

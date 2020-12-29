@@ -139,10 +139,13 @@ class Field extends React.Component {
             <div className="field_potato_count_bad">썩은 감자 개수 : 0</div>
           </div>
           <div className="field_categories">
-            <div className="field_categories_all">전체</div>
-            <div className="field_categories_dev">개발</div>
-            <div className="field_categories_travel">여행</div>
-            <div className="field_categories_cook">요리</div>
+            <div className="field_categories_title">카테고리</div>
+            <div className=" field_categories_table">
+              <div className="field_categories_all">전체</div>
+              <div className="field_categories_dev">개발</div>
+              <div className="field_categories_travel">여행</div>
+              <div className="field_categories_cook">요리</div>
+            </div>
           </div>
         </div>
         <div className="field_right">
