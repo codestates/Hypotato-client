@@ -1,7 +1,7 @@
 import React from "react";
 import "./Signup.css";
 import potatoLogo from "../image/potato.png";
-import axios from 'axios';
+import axios from "axios";
 
 class Signup extends React.Component {
   constructor(props) {
@@ -37,7 +37,7 @@ class Signup extends React.Component {
   }
 
   signUpRequestHanlder() {
-    const { nickName, email, passWord, inspect } = this.state;
+    const { nickName, passWord, email, inspect } = this.state;
     // if (!passWord.match("^(?=.*[@$!%*?&])[@$!%*?&]{8,}$")) {
     //   this.setState({ pwCheck: false });
     // }
@@ -47,13 +47,10 @@ class Signup extends React.Component {
     } else if(this.state.passWord !== "" &&this.state.inspect !== "") {
       // 서버에 사인업 axios 요청.
       axios({
-        method: 'post',
+        method: "post",
         url: `https://hypotatoserveertest1.herokuapp.com/signup`,
-        withCredentials: true,
-        headers: {'Content-Type': 'application/json'},
-        data: {email: email, nickname: nickName, password: passWord },
-      })
-      .then((res)=> console.log(res));
+        data: { email: email, nickname: nickName, password: passWord },
+      }).then((res) => console.log(res));
     }
   }
 

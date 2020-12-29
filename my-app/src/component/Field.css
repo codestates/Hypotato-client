@@ -123,7 +123,7 @@
 .field_right_menu_manual,
 .field_right_menu_logout {
   margin: 10px 20px 10px 20px;
-  font-size: 1.91vh;
+  font-size: 1.8vh;
   color: #cdb18e;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   background-color: #e3d1b4;
@@ -133,6 +133,7 @@
   padding: 14px 175px 10px 175px;
   box-shadow: 3px 2.5px 0px #7c7979;
   font-weight: bold;
+  position: sticky;
 }
 
 .field_right_fields {

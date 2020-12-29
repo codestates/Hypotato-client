@@ -14,9 +14,9 @@
   bottom: 370px;
   font-size: 70px;
   font-weight: bold;
-  text-shadow: 3px 10px 10px rgb(51, 47, 47);
+  /* text-shadow: 3px 10px 10px rgb(51, 47, 47); */
   color: #7c7979;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
 }
 
 .signin_subtitle {
@@ -84,7 +84,7 @@
   font-size: 20px;
   box-shadow: 2px 1px 0px #7c7979;
   color: rgb(211, 250, 132);
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
   background-color: rgb(244, 196, 196);
   margin-top: -10px;
   font-weight: bold;
@@ -96,11 +96,11 @@
   height: 100px;
   border-radius: 20px;
   box-shadow: 2px 1px 0px #7c7979;
-  color: rgb(249, 151, 116);
+  color: rgb(247, 172, 145);
   font-weight: bold;
   font-size: 30px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  background-color: #e4f6aa;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  background-color: rgb(218, 199, 218);
 }
 
 .sign_signup {
@@ -110,7 +110,7 @@
   box-shadow: 2px 1px 0px #7c7979;
   font-weight: bold;
   font-size: 20px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: rgb(249, 151, 116);
+  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+  color: rgb(248, 200, 110);
   background-color: #e4f6aa;
 }
