@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
 import Signin from "./component/Signin";
 import Signup from "./component/Signup";
 import Farm from "./component/Farm";
@@ -28,7 +29,7 @@ class App extends Component {
     this.setState({ [name]: value });
     // console.log(this.state);
   }
-
+  
   login() {
     this.setState({
       isLogin: true,
@@ -46,7 +47,7 @@ class App extends Component {
     console.log(email, passWord);
     axios({
       method: "post",
-      url: `https://hypotatoserveertest1.herokuapp.com/signin`,
+      url: `https://3.133.83.100:4000//signin`,
       headers: { "Content-Type": "application/json" },
       withCredentials: true,
       data: { email: email, password: passWord },
@@ -54,7 +55,7 @@ class App extends Component {
       console.log("로그인 후 = ", res);
       axios({
         method: "get",
-        url: `https://hypotatoserveertest1.herokuapp.com/userinfo`,
+        url: `https://3.133.83.100:4000//userinfo`,
         withCredentials: true,
       })
         .then((userinfo) => {

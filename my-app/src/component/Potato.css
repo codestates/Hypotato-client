@@ -2,10 +2,12 @@
   display: flex;
   flex: 1;
   margin: 20px 10px 10px 50px;
-  /* border: solid; */
+  border: solid #cdb18e;
   max-width: 93%;
   min-width: 93%;
   min-height: 170px;
+  border-radius: 20px;
+  box-shadow: 3px 5px 10px #7c7979;
 }
 
 .potato_component_body_left {
@@ -17,6 +19,7 @@
 
 .potato_component_body_left_image {
   width: 180px;
+  padding-left: 25px;
 }
 
 .potato_component_body_right {
@@ -24,26 +27,37 @@
   /* border: solid; */
   display: flex;
   flex-direction: column;
+  border-radius: 30px;
 }
 
 .potato_component_body_right_potato-url {
   flex: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  border: solid;
-  border-radius: 20px;
+  border: solid #cdb18e;
+  border-radius: 100px;
   margin: 10px 10px 10px 10px;
+  display: flex;
+  padding-left: 25px;
+  align-items: center;
+  font-size: 25px;
+  color: #ffffff;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  box-shadow: 2px 2px 0px #7c7979;
+  padding-top: -10px;
 }
 
 .potato_component_body_right_potato-desc {
   flex: 1;
+  border: solid #cdb18e;
+  border-radius: 100px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  border: solid;
-  border-radius: 20px;
+  align-items: center;
   margin: 10px 10px 10px 10px;
+  padding-left: 25px;
+  font-size: 20px;
+  color: #ffffff;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  box-shadow: 2px 2px 0px #7c7979;
+  padding-top: 3px;
 }
 
 .potato_component_body_right_potato-url_text {

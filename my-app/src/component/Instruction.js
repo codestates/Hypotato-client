@@ -1,6 +1,7 @@
 import React from "react";
 import potatoLogo from "../image/potato.png";
 import "./Instruction.css";
+import Typing from "react-typing-animation";
 
 const Instruction = () => {
   return (
@@ -18,10 +19,13 @@ const Instruction = () => {
           <div className="field_potato_count_bad">썩은 감자 개수 : 0</div>
         </div>
         <div className="field_categories">
-          <div className="field_categories_all">전체</div>
-          <div className="field_categories_dev">개발</div>
-          <div className="field_categories_travel">여행</div>
-          <div className="field_categories_cook">요리</div>
+          <div className="field_categories_title">카테고리</div>
+          <div className=" field_categories_table">
+            <div className="field_categories_all">전체</div>
+            <div className="field_categories_dev">개발</div>
+            <div className="field_categories_travel">여행</div>
+            <div className="field_categories_cook">요리</div>
+          </div>
         </div>
       </div>
       <div className="field_right">
@@ -34,11 +38,13 @@ const Instruction = () => {
           <div className="inst_modal">
             <div className="inst_title">How To Use Potato</div>
             <div className="inst_value">
-              <p>" hypotato hype link + potato "</p>
-              <p>즐겨찾기 농장 hypotato에 오신 여러분 환영합니다.</p>
-              <p>이곳에서는 여러분의 즐겨찾기를 관리 할 수 있으며</p>
-              <p>즐겨찾기는 “감자" 즐겨찾기 폴더는 “밭"으로 표현됩니다.</p>
-              <p>글쓴이 : 정인수의 검</p>
+              <Typing>
+                <p>" hypotato hype link + potato "</p>
+                <p>즐겨찾기 농장 hypotato에 오신 여러분 환영합니다.</p>
+                <p>이곳에서는 여러분의 즐겨찾기를 관리 할 수 있으며</p>
+                <p>즐겨찾기는 “감자" 즐겨찾기 폴더는 “밭" 으로 표현됩니다.</p>
+                <p>글쓴이 : 정인수의 검</p>
+              </Typing>
             </div>
           </div>
         </div>
