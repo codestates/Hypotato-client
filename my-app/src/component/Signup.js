@@ -48,7 +48,7 @@ class Signup extends React.Component {
       // 서버에 사인업 axios 요청.
       axios({
         method: "post",
-        url: `https://hypotatoserveertest1.herokuapp.com/signup`,
+        url: `https://3.133.83.100:4000/signup`,
         data: { email: email, nickname: nickName, password: passWord },
       }).then((res) => console.log(res));
     }

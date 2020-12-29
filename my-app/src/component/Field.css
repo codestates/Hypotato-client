@@ -90,7 +90,7 @@
   font-weight: bold;
   box-shadow: 3px 2.5px 0px #7c7979;
   border-radius: 40px;
-  width: 300px;
+  width: 30%;
   text-align: center;
   height: 30px;
   display: flex;
@@ -102,10 +102,10 @@
 }
 
 .field_categories_table {
-  margin-top: 15px;
+  margin-top: 12px;
   border: solid #cdb18e;
-  width: 300px;
-  height: 350px;
+  width: 90%;
+  height: 90%;
   border-radius: 20px;
   display: flex;
   flex-direction: column;

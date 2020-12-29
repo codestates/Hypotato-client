@@ -42,31 +42,58 @@ class App extends Component {
   }
 
   goToFieldHander() {
+    const { email, passWord } = this.state;
+    axios({
+      method: "post",
+      url: `https://3.133.83.100:4000/signin`,
+      headers: { "Content-Type": "application/json" },
+      withCredentials: true,
+      data: { email: email, password: passWord },
+    }).then((res) => {
+      console.log("로그인 후 = ", res);
+
+      return axios({
+        method: "get",
+        url: `https://3.133.83.100:4000/userinfo`,
+        withCredentials: true,
+      })
+        .then((userinfo) => {
+          console.log("userinfo 입니다 = ", userinfo);
+        })
+        .then(() => {
+          this.setState({ goToField: true });
+        })
+        .catch((err) => console.log(err));
+    });
+
     // const { email, passWord } = this.state;
     // axios({
     //   method: "post",
-    //   url: `https://hypotatoserveertest1.herokuapp.com/signin`,
+    //   url: `http://3.133.83.100:4000/signin`,
     //   headers: { "Content-Type": "application/json" },
     //   withCredentials: true,
     //   data: { email: email, password: passWord },
-    // }).then((res) => {
-    //   console.log("로그인 후 = ", res);
-    //   axios({
-    //     method: "get",
-    //     url: `https://hypotatoserveertest1.herokuapp.com/userinfo`,
-    //     withCredentials: true,
+    // })
+    //   .then((res) => {
+    //     console.log("로그인 후 = ", res);
     //   })
-    //     .then((userinfo) => {
+    //   .then(() => {
+    //     return axios({
+    //       method: "get",
+    //       url: `http://3.133.83.100:4000/userinfo`,
+    //       withCredentials: true,
+    //     }).then((userinfo) => {
     //       console.log("userinfo 입니다 = ", userinfo);
-    //     })
-    //     .then(() => {
-    //       this.setState({ goToField: true });
-    //     })
-    //     .catch((err) => console.log(err));
+    //     });
+    //     // .then(() => {
+    //     //   this.setState({ goToField: true });
+    //     // })
+    //     // .catch((err) => console.log(err));
+    //   });
+
+    // this.setState({
+    //   goToField: true,
     // });
-    this.setState({
-      goToField: true,
-    });
   }
 
   render() {
