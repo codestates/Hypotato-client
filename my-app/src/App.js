@@ -10,8 +10,6 @@ import axios from "axios";
 import "./App.css";
 import "./reset.css";
 
-
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,11 +33,7 @@ class App extends Component {
         <Switch >
           <Route exact path="/" render={(routeProps) => <Signin
             {...routeProps}
-            signInHandler={this.signInHandler}
-            goToFieldHander={this.goToFieldHander}
-            signUpButtonHander={this.signUpButtonHander}
           />} />
-          <Route exact path="/signup" render={(routeProps) => <Signup routeProps2 = {routeProps}/>} />
           <Route exact path="/signup" render={(routeProps) => <Signup {...routeProps} />} />
           <Route exact path="/mypage" render={(routeProps) => <Mypage {...routeProps} />} />
           <Route exact path="/instruction" render={(routeProps) => <Instruction {...routeProps} />} />

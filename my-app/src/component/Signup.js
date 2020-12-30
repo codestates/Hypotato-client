@@ -37,22 +37,22 @@ class Signup extends React.Component {
   }
 
   signUpRequestHanlder() {
-    const { nickName, passWord, email, inspect } = this.state;
-    // if (!passWord.match("^(?=.*[@$!%*?&])[@$!%*?&]{8,}$")) {
-    //   this.setState({ pwCheck: false });
-    // }
+    // const { nickName, passWord, email, inspect } = this.state;
+    // // if (!passWord.match("^(?=.*[@$!%*?&])[@$!%*?&]{8,}$")) {
+    // //   this.setState({ pwCheck: false });
+    // // }
 
-    if (passWord !== inspect) {
-      this.setState({ differ: true });
-    } else if(this.state.passWord !== "" &&this.state.inspect !== "") {
-      // 서버에 사인업 axios 요청.
-      axios({
-        method: "post",
-        url: `https://3.133.83.100:4000/signup`,
-        data: { email: email, nickname: nickName, password: passWord },
-        withCredentials: true,
-      }).then((res) => console.log(res));
-    }
+    // if (passWord !== inspect) {
+    //   this.setState({ differ: true });
+    // } else if(this.state.passWord !== "" &&this.state.inspect !== "") {
+    //   // 서버에 사인업 axios 요청.
+    //   axios({
+    //     method: "post",
+    //     url: `https://3.133.83.100:4000/signup`,
+    //     data: { email: email, nickname: nickName, password: passWord },
+    //     withCredentials: true,
+    //   }).then((res) => console.log(res));
+    // }
 
     this.props.history.push("/"); // 나중에 axios요청 then() 안쪽으로 보내야 함. 
   }

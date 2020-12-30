@@ -73,7 +73,7 @@ class Signin extends React.Component {
             <input
               className="signin_input_mail"
               name="email"
-              type="text"
+              type="email"
               value={email}
               onChange={this.signInHandler}
             />
