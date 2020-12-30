@@ -3,7 +3,10 @@ import potatoLogo from "../image/potato.png";
 import "./Instruction.css";
 import Typing from "react-typing-animation";
 
-const Instruction = () => {
+const Instruction = ({history}) => {
+  const goToMyPage = () => { history.push("/mypage") }
+  const goToInstruction = () => { history.push("/instruction") }
+
   return (
     <div className="field_entire">
       <div className="field_left">
@@ -30,8 +33,8 @@ const Instruction = () => {
       </div>
       <div className="field_right">
         <div className="field_right_menu">
-          <div className="field_right_menu_mypage">마이페이지</div>
-          <div className="field_right_menu_manual">사용 설명서</div>
+          <div className="field_right_menu_mypage" onClick={goToMyPage}>마이페이지</div>
+          <div className="field_right_menu_manual" onClick={goToInstruction}>사용 설명서</div>
           <div className="field_right_menu_logout">로그아웃</div>
         </div>
         <div className="field_right_fields, inst_main">

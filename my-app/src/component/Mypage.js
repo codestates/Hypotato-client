@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import potatoLogo from "../image/potato.png";
-import EditInfo from "./EditInfo";
 import fieldImage from "../image/field.png";
 import tresh from "../image/tresh.png";
 import "./Mypage.css";
@@ -18,24 +17,29 @@ class Mypage extends Component {
           field: 10,
         },
       },
-      goToEdit: false,
     };
-    this.editHandler = this.editHandler.bind(this);
+   
+    this.goToMyPage = this.goToMyPage.bind(this);
+    this.goToInstruction = this.goToInstruction.bind(this);
+    this.goToEditInfo = this.goToEditInfo.bind(this);
   }
 
-  editHandler() {
-    this.setState({
-      goToEdit: true,
-    });
+  goToMyPage() {
+    this.props.history.push("/mypage"); // 마이페이지 안에서 마이페이지로가는 클릭 이벤트를 만든 이유: 그냥 눌러보는 user들이 있기 때문. 
+  }
+
+  goToInstruction() {
+    this.props.history.push("/instruction");
+  }
+
+  goToEditInfo() {
+    this.props.history.push("/editinfo");
   }
 
   render() {
     const { nickName, email, fieldInfo } = this.state.userInfo;
     return (
       <>
-        {this.state.goToEdit ? (
-          <EditInfo />
-        ) : (
           <div className="field_entire">
             <div className="field_left">
               <div className="field_profile">
@@ -63,12 +67,12 @@ class Mypage extends Component {
             </div>
             <div className="field_right">
               <div className="field_right_menu">
-                <div className="field_right_menu_mypage">마이페이지</div>
-                <div className="field_right_menu_manual">사용 설명서</div>
+                <div className="field_right_menu_mypage" onClick={this.goToMyPage}>마이페이지</div>
+                <div className="field_right_menu_manual" onClick={this.goToInstruction}>사용 설명서</div>
                 <div className="field_right_menu_logout">로그아웃</div>
               </div>
               <div className="field_right_fields, test">
-                <button className="mypage_edit_info" onClick={this.editHandler}>
+                <button className="mypage_edit_info" onClick={this.goToEditInfo}>
                   Edit Info
                 </button>
                 <div className="mypage_contents">
@@ -127,7 +131,6 @@ class Mypage extends Component {
               </div>
             </div>
           </div>
-        )}
       </>
     );
   }

@@ -8,8 +8,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -92,7 +90,7 @@
   font-weight: bold;
   box-shadow: 3px 2.5px 0px #7c7979;
   border-radius: 40px;
-  width: 300px;
+  width: 30%;
   text-align: center;
   height: 30px;
   display: flex;
@@ -104,10 +102,10 @@
 }
 
 .field_categories_table {
-  margin-top: 15px;
+  margin-top: 12px;
   border: solid #cdb18e;
-  width: 300px;
-  height: 350px;
+  width: 90%;
+  height: 90%;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -171,7 +169,7 @@
 .field_right_menu_manual,
 .field_right_menu_logout {
   margin: 10px 20px 10px 20px;
-  font-size: 1.8vh;
+  font-size: 1rem;
   color: #cdb18e;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   background-color: #e3d1b4;

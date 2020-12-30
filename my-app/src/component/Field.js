@@ -69,7 +69,18 @@ class Field extends React.Component {
 
     this.renderFieldContents = this.renderFieldContents.bind(this);
     this.potatoRenderHandler = this.potatoRenderHandler.bind(this);
-    this.rennderPotatos = this.renderPotatos.bind(this);
+    this.renderPotatos = this.renderPotatos.bind(this);
+    this.goToMyPage = this.goToMyPage.bind(this);
+    this.goToInstruction = this.goToInstruction.bind(this);
+  }
+
+  goToMyPage () {
+    console.log(1);
+    this.props.history.push("/mypage");
+  }
+
+  goToInstruction() {
+    this.props.history.push("/instruction");
   }
 
   potatoRenderHandler() {
@@ -152,13 +163,13 @@ class Field extends React.Component {
           <div className="field_right_menu">
             <div
               className="field_right_menu_mypage"
-              onClick={this.props.goToMyPage}
+              onClick={this.goToMyPage}
             >
               마이페이지
             </div>
             <div
               className="field_right_menu_manual"
-              onClick={this.props.instructionHandler}
+              onClick={this.goToInstruction}
             >
               사용 설명서
             </div>

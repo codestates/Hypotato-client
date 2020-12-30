@@ -1,92 +1,53 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom"; 
 import Signin from "./component/Signin";
 import Signup from "./component/Signup";
-import Farm from "./component/Farm";
+import Field from "./component/Field";
+import Mypage from "./component/Mypage";
+import Instruction from './component/Instruction';
+import EditInfo from './component/EditInfo';
 import axios from "axios";
 import "./App.css";
 import "./reset.css";
+
+
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLogin: false,
-      signup: false, // 사인업버튼 클릭되면 true로 바뀌게
-      goToField: false,
-      email: "",
-      passWord: "",
+      // isLogin: false,
     };
 
-    this.login = this.login.bind(this);
-    this.signUpButtonHander = this.signUpButtonHander.bind(this);
-    this.goToFieldHander = this.goToFieldHander.bind(this);
-    this.signInHandler = this.signInHandler.bind(this);
+    // this.login = this.login.bind(this);
   }
 
-  signInHandler(e) {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
-    // console.log(this.state);
-  }
-  
-  login() {
-    this.setState({
-      isLogin: true,
-    });
-  }
-
-  signUpButtonHander() {
-    this.setState({
-      signup: true,
-    });
-  }
-
-  goToFieldHander() {
-    const { email, passWord } = this.state;
-    console.log(email, passWord);
-    axios({
-      method: "post",
-      url: `https://3.133.83.100:4000//signin`,
-      headers: { "Content-Type": "application/json" },
-      withCredentials: true,
-      data: { email: email, password: passWord },
-    }).then((res) => {
-      console.log("로그인 후 = ", res);
-      axios({
-        method: "get",
-        url: `https://3.133.83.100:4000//userinfo`,
-        withCredentials: true,
-      })
-        .then((userinfo) => {
-          console.log("userinfo 입니다 = ", userinfo);
-        })
-        .then(() => {
-          this.setState({ goToField: true });
-        })
-        .catch((err) => console.log(err));
-    });
-
-    this.setState({
-      goToField: true,
-    });
-  }
+  // login() {
+  //   this.setState({
+  //     isLogin: true,
+  //   });
+  // }
 
   render() {
-    const { isLogin, signup, goToField } = this.state;
+    const { isLogin } = this.state;
     return (
       <div className="body">
-        {goToField ? (
-          <Farm myinfo={this.state.myinfo}/>
-        ) : signup ? (
-          <Signup />
-        ) : (
-          <Signin
+        <Switch >
+          <Route exact path="/" render={(routeProps) => <Signin
+            {...routeProps}
             signInHandler={this.signInHandler}
             goToFieldHander={this.goToFieldHander}
             signUpButtonHander={this.signUpButtonHander}
-          />
-        )}
+          />} />
+          <Route exact path="/signup" render={(routeProps) => <Signup routeProps2 = {routeProps}/>} />
+          <Route exact path="/signup" render={(routeProps) => <Signup {...routeProps} />} />
+          <Route exact path="/mypage" render={(routeProps) => <Mypage {...routeProps} />} />
+          <Route exact path="/instruction" render={(routeProps) => <Instruction {...routeProps} />} />
+          <Route exact path="/field" render={(routeProps) => <Field {...routeProps} /> } />
+          <Route exact path="/mypage" render={(routeProps) => <Mypage {...routeProps}/>}/>
+          <Route exact path="/instruction" render={(routeProps) => <Instruction {...routeProps}/>} />
+          <Route exact path="/editinfo" render={(routeProps) => <EditInfo {...routeProps}/>}/>
+        </Switch>
       </div>
     );
   }

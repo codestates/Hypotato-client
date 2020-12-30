@@ -53,6 +53,8 @@ class Signup extends React.Component {
         withCredentials: true,
       }).then((res) => console.log(res));
     }
+
+    this.props.history.push("/"); // 나중에 axios요청 then() 안쪽으로 보내야 함. 
   }
 
   render() {

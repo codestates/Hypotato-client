@@ -1,5 +1,6 @@
 import React from "react";
 import Field from "./Field";
+import { Route, Switch } from "react-router-dom";
 import Mypage from "./Mypage";
 import Instruction from "./Instruction";
 // import "./Field.css";
@@ -13,10 +14,10 @@ class Farm extends React.Component {
       goToInstruction: false,
     };
     this.goToMyPage = this.goToMyPage.bind(this);
-    this.instructionHandler = this.instructionHandler.bind(this);
+    this.goToInstruction = this.goToInstruction.bind(this);
   }
 
-  instructionHandler() {
+  goToInstruction() {
     this.setState({
       goToInstruction: true,
     });
@@ -32,16 +33,6 @@ class Farm extends React.Component {
     const { myPage, goToInstruction } = this.state;
     return (
       <>
-        {myPage ? (
-          <Mypage />
-        ) : goToInstruction ? (
-          <Instruction />
-        ) : (
-          <Field
-            goToMyPage={this.goToMyPage}
-            instructionHandler={this.instructionHandler}
-          />
-        )}
       </>
     );
   }
