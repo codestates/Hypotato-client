@@ -169,7 +169,7 @@
 .field_right_menu_manual,
 .field_right_menu_logout {
   margin: 10px 20px 10px 20px;
-  font-size: 1.8vh;
+  font-size: 1rem;
   color: #cdb18e;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   background-color: #e3d1b4;
