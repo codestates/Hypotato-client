@@ -67,19 +67,41 @@ class Field extends React.Component {
       isFieldClicked: false,
     };
 
-    this.renderFieldContents = this.renderFieldContents.bind(this);
-    this.potatoRenderHandler = this.potatoRenderHandler.bind(this);
-    this.rennderPotatos = this.renderPotatos.bind(this);
+    this.goToField = this.goToField.bind(this);
+    this.fieldContentsRender = this.fieldContentsRender.bind(this);
+    this.potatoClickHandler = this.potatoClickHandler.bind(this);
+    this.renderPotatos = this.renderPotatos.bind(this);
+    this.goToMyPage = this.goToMyPage.bind(this);
+    this.goToInstruction = this.goToInstruction.bind(this);
+    this.signOutHandler = this.signOutHandler.bind(this);
   }
 
-  potatoRenderHandler() {
+  goToField() {
+    this.setState({ isFieldClicked: false });
+    this.props.history.push("/field");
+  }
+
+  goToMyPage() {
+    console.log(1);
+    this.props.history.push("/mypage");
+  }
+
+  goToInstruction() {
+    this.props.history.push("/instruction");
+  }
+
+  potatoClickHandler() {
     this.setState({
       isFieldClicked: true,
     });
   }
 
+  signOutHandler() {
+    this.props.history.push("/");
+  }
+
   // 밭들을 렌더하는 메소드
-  renderFieldContents() {
+  fieldContentsRender() {
     return (
       <div className="field_right_fields">
         <div className="field_right_bar">
@@ -90,7 +112,7 @@ class Field extends React.Component {
         <div className="field_right_field_contents">
           {this.state.data.fields.map((f) => (
             <FieldContents
-              potatoRenderHandler={this.potatoRenderHandler}
+              potatoClickHandler={this.potatoClickHandler}
               fieldName={f.fieldName}
               fieldDesc={f.fieldDesc}
               potatoCount={this.state.data.potatoes.length}
@@ -132,6 +154,7 @@ class Field extends React.Component {
               className="field_profile_photo"
               src={potatoLogo}
               alt="이미지를 찾을 수 없습니다."
+              onClick={this.goToField}
             />
           </div>
           <div className="field_potato_count">
@@ -150,24 +173,26 @@ class Field extends React.Component {
         </div>
         <div className="field_right">
           <div className="field_right_menu">
-            <div
-              className="field_right_menu_mypage"
-              onClick={this.props.goToMyPage}
-            >
+            <div className="field_right_menu_mypage" onClick={this.goToMyPage}>
               마이페이지
             </div>
             <div
               className="field_right_menu_manual"
-              onClick={this.props.instructionHandler}
+              onClick={this.goToInstruction}
             >
               사용 설명서
             </div>
-            <div className="field_right_menu_logout">로그아웃</div>
+            <div
+              className="field_right_menu_logout"
+              onClick={this.signOutHandler}
+            >
+              로그아웃
+            </div>
           </div>
 
           {/* 밭을 보여주느냐, 감자를 보여주느냐 결정하는 부분 */}
           {!this.state.isFieldClicked
-            ? this.renderFieldContents()
+            ? this.fieldContentsRender()
             : this.renderPotatos()}
         </div>
       </div>

@@ -59,3 +59,17 @@
   box-shadow: 2px 2px 0px #7c7979;
   padding-top: 3px;
 }
+
+.potato_component_body_right_potato-url_text {
+  position: absolute;
+  font-family: "Cute Font", cursive;
+  font-size: 40px;
+  margin: 10px 10px 10px 10px;
+}
+
+.potato_component_body_right_potato-desc_text {
+  position: absolute;
+  font-family: "Cute Font", cursive;
+  font-size: 40px;
+  margin: 10px 10px 10px 10px;
+}

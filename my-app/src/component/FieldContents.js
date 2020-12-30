@@ -8,12 +8,11 @@ class FieldContents extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    console.log(this.props);
   }
 
   render() {
     return (
-      <div onClick={this.props.potatoRenderHandler} className="field_content">
+      <div onClick={this.props.potatoClickHandler} className="field_content">
         <img
           className="field_image"
           src={fieldImage}

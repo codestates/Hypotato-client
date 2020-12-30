@@ -3,6 +3,31 @@ import potatoLogo from "../image/potato.png";
 import "./EditInfo.css";
 
 class EditInfo extends Component {
+  constructor(props) {
+    super(props);
+
+    this.goToMyPage = this.goToMyPage.bind(this);
+    this.signOutHandler = this.signOutHandler.bind(this);
+    this.goToField = this.goToField.bind(this);
+    this.goToInstruction = this.goToInstruction.bind(this);
+  }
+
+  goToMyPage() {
+    this.props.history.push("/mypage");
+  }
+
+  goToField() {
+    this.props.history.push("/field");
+  }
+
+  signOutHandler() {
+    this.props.history.push("/");
+  }
+
+  goToInstruction() {
+    this.props.history.push("/instruction");
+  }
+
   render() {
     return (
       <div className="field_entire">
@@ -12,6 +37,7 @@ class EditInfo extends Component {
               className="field_profile_photo"
               src={potatoLogo}
               alt="이미지를 찾을 수 없습니다."
+              onClick={this.goToField}
             />
           </div>
           <div className="field_potato_count">
@@ -30,14 +56,21 @@ class EditInfo extends Component {
         </div>
         <div className="field_right">
           <div className="field_right_menu">
-            <div
-              className="field_right_menu_mypage"
-              onClick={this.props.goToMyPage}
-            >
+            <div className="field_right_menu_mypage" onClick={this.goToMyPage}>
               마이페이지
             </div>
-            <div className="field_right_menu_manual">사용 설명서</div>
-            <div className="field_right_menu_logout">로그아웃</div>
+            <div
+              className="field_right_menu_manual"
+              onClick={this.goToInstruction}
+            >
+              사용 설명서
+            </div>
+            <div
+              className="field_right_menu_logout"
+              onClick={this.signOutHandler}
+            >
+              로그아웃
+            </div>
           </div>
           <div className="field_right_fields, edit_main">
             <div className="edit_model">
