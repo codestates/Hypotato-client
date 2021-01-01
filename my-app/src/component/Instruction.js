@@ -1,6 +1,7 @@
 import React from "react";
 import potatoLogo from "../image/potato.png";
 import "./Instruction.css";
+import axios from "axios";
 import Typing from "react-typing-animation";
 
 const Instruction = ({ history }) => {
@@ -13,11 +14,24 @@ const Instruction = ({ history }) => {
   };
 
   const goToField = () => {
-    history.push("/field");
+    axios({
+      method: "get",
+      url: ` https://hypotato.com/userinfo`,
+      withCredentials: true,
+    }).then((userInfo) => {
+      this.setState({ isFieldClicked: false });
+      this.props.history.push("/field", { ...userInfo.data.data }); // 어디서든지 감자 프로필 이미지를 누르면 밭으로 가는데, 그 때 다시 밭 정보를 서버로부터 받아서 history push될 때 같이 보내주기 위한 로직.
+    });
   };
 
   const signOutHandler = () => {
-    history.push("/");
+    axios({
+      method: "post",
+      url: `https://hypotato.com/signout`,
+      withCredentials: true,
+    }).then(() => {
+      history.push("/");
+    });
   };
 
   return (

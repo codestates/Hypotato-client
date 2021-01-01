@@ -3,12 +3,17 @@
   flex: 1;
   margin: 20px 10px 10px 50px;
   border: solid #cdb18e;
+  border-radius: 20px;
   max-width: 93%;
   min-width: 93%;
   min-height: 170px;
-  border-radius: 20px;
   box-shadow: 3px 5px 10px #7c7979;
+  overflow: hidden;
 }
+
+/* .potato_component {
+  overflow: scroll;
+} */
 
 .potato_component_body_left {
   display: flex;
@@ -34,7 +39,7 @@
   flex: 1;
   border: solid #cdb18e;
   border-radius: 100px;
-  margin: 10px 10px 10px 10px;
+  margin: 10px 10px 5px 10px;
   display: flex;
   padding-left: 25px;
   align-items: center;
@@ -51,7 +56,7 @@
   border-radius: 100px;
   display: flex;
   align-items: center;
-  margin: 10px 10px 10px 10px;
+  margin: 5px 10px 10px 10px;
   padding-left: 25px;
   font-size: 20px;
   color: #ffffff;
@@ -61,15 +66,19 @@
 }
 
 .potato_component_body_right_potato-url_text {
-  position: absolute;
+  font-family: "Cute Font", cursive;
+  font-size: 40px;
+  margin: 10px 10px 10px 10px;
+  text-decoration: none;
+}
+
+.potato_component_body_right_potato-desc_text {
   font-family: "Cute Font", cursive;
   font-size: 40px;
   margin: 10px 10px 10px 10px;
 }
 
-.potato_component_body_right_potato-desc_text {
-  position: absolute;
-  font-family: "Cute Font", cursive;
-  font-size: 40px;
-  margin: 10px 10px 10px 10px;
+.link {
+  text-decoration: none;
+  color: yellowgreen;
 }

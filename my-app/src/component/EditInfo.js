@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import potatoLogo from "../image/potato.png";
+import axios from "axios";
 import "./EditInfo.css";
 
 class EditInfo extends Component {
@@ -10,6 +11,8 @@ class EditInfo extends Component {
     this.signOutHandler = this.signOutHandler.bind(this);
     this.goToField = this.goToField.bind(this);
     this.goToInstruction = this.goToInstruction.bind(this);
+    this.nicknameChecker = this.nicknameChecker.bind(this);
+    // this.confirmChecker = this.confirmChecker.bind(this)
   }
 
   goToMyPage() {
@@ -17,16 +20,63 @@ class EditInfo extends Component {
   }
 
   goToField() {
-    this.props.history.push("/field");
+    axios({
+      method: "get",
+      url: ` https://hypotato.com/userinfo`,
+      withCredentials: true,
+    }).then((userInfo) => {
+      this.setState({ isFieldClicked: false });
+      this.props.history.push("/field", { ...userInfo.data.data }); // 어디서든지 감자 프로필 이미지를 누르면 밭으로 가는데, 그 때 다시 밭 정보를 서버로부터 받아서 history push될 때 같이 보내주기 위한 로직.
+    });
   }
 
   signOutHandler() {
-    this.props.history.push("/");
+    axios({
+      method: "post",
+      url: `https://hypotato.com/signout`,
+      withCredentials: true,
+    }).then(() => {
+      this.props.history.push("/");
+    });
   }
 
   goToInstruction() {
     this.props.history.push("/instruction");
   }
+
+  nicknameChecker() {
+    // 닉네임 "check"버튼 눌렀을 때 서버로 중복체크 요청할 수 있는 메소드 만들어야 함.
+    axios({
+      method: "post",
+      url: `https://hypotato.com/signup`,
+      data: { nickname: this.state.nickname, chk: "nicknameChk" },
+      withCredentials: true,
+    }).then((res) => {
+      console.log(res.data.chkNickname);
+      if (res.data.chkNickname === "nicknameOk") {
+        this.setState({
+          nicknameChk: true,
+        });
+        alert("사용가능한 닉네임입니다.");
+      } else {
+        alert("중복되는 닉네임이 있습니다.");
+      }
+    });
+  }
+
+  /*
+  confirmChecker() {
+    axios({
+      method: "put",
+      url: `https://hypotato.com/update`,
+      data: { nickname: this.state.nickname, password: this.state.password },
+      withCredentials: true,
+    }) 
+    .then(() => {
+     alert('변경이 완료되었습니다.')
+     })
+    }
+  */
 
   render() {
     return (
@@ -77,12 +127,22 @@ class EditInfo extends Component {
               <div className="edit_name_key">Nick Name</div>
               <div className="edit_name_row">
                 <input className="edit_name_value" type="text" />
-                <button className="edit_name_check">check</button>
+                <button
+                  className="edit_name_check"
+                  onClick={this.nicknameChecker}
+                >
+                  check
+                </button>
               </div>
               <div className="edit_password_key">Password</div>
               <input type="text" className="edit_password_value" />
               <input type="text" className="edit_password_check" />
-              <button className="edit_info_Confirm">Confirm</button>
+              <button
+                className="edit_info_Confirm"
+                onClick={this.confirmChecker}
+              >
+                Confirm
+              </button>
             </div>
           </div>
         </div>
