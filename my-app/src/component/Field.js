@@ -3,6 +3,10 @@ import "./Field.css";
 import potatoLogo from "../image/potato.png";
 import FieldContents from "./FieldContents";
 import fieldImage from "../image/potato-field.jpg";
+
+// 봄결님 & 인수 추가코드 : import BadPotatoFilter
+import BadPotatoFilter from "./BadPotatoFilter";
+
 import axios from "axios";
 
 class Field extends React.Component {
@@ -15,6 +19,10 @@ class Field extends React.Component {
       fieldCategory: "",
       isFieldClicked: false,
       isAddFieldClicked: false,
+
+      // 봄결님 & 인수 추가코드 : isBadPotatoFilter: false
+      isBadPotatoFilter: false,
+
       potatoes: "",
       goodPotato: 0,
       badPotato: 0,
@@ -31,6 +39,9 @@ class Field extends React.Component {
     this.addFieldSubmit = this.addFieldSubmit.bind(this);
     this.addFiledValueUpdate = this.addFiledValueUpdate.bind(this);
     this.countPotatoNumber = this.countPotatoNumber.bind(this);
+
+    // 봄결님 & 인수 추가 코드 + 216줄 onClick추가됨
+    this.BadPotatoFilter = this.BadPotatoFilter.bind(this);
   }
 
   componentDidMount() {
@@ -192,93 +203,191 @@ class Field extends React.Component {
     }
   }
 
+  // 봄결님 & 인수 추가코드 : BadPotatoFilter 메소드
+  BadPotatoFilter() {
+    this.setState({
+      isBadPotatoFilter: true,
+    });
+  }
+
   render() {
     const fields = this.props.location.state.fields;
     const potatoes = this.props.location.state.potatoes;
-    return (
-      <div className="field_entire">
-        <div className="field_left">
-          <div className="field_profile">
-            <img
-              className="field_profile_photo"
-              src={potatoLogo}
-              alt="이미지를 찾을 수 없습니다."
-              onClick={this.goToField}
-            />
+
+    // 봄결님 & 인수 추가코드
+    // this.state.isBadPotatoFilter 를 이용한 컴포넌트 전환 추가
+    // this.state.isBadPotatoFilter 가 ture 일 경우 <BadPotatoFilter> 컴포넌트 전환
+    // this.state.isBadPotatoFilter 가 false 일 경우 <FieldsContents> 컴포넌트 전환
+    if (!this.state.isBadPotatoFilter) {
+      return (
+        <div className="field_entire">
+          <div className="field_left">
+            <div className="field_profile">
+              <img
+                className="field_profile_photo"
+                src={potatoLogo}
+                alt="이미지를 찾을 수 없습니다."
+                onClick={this.goToField}
+              />
+            </div>
+            <div className="field_potato_count">
+              <div className="field_potato_count_good">
+                정상 감자 개수 : {this.state.goodPotato}
+              </div>
+
+              {/* 봄결님 & 인수 추가코드 : onClick = {this.BadPotatoFilter} */}
+              <div
+                className="field_potato_count_bad"
+                onClick={this.BadPotatoFilter}
+              >
+                썩은 감자 개수 : {this.state.badPotato}
+              </div>
+            </div>
+            <div className="field_categories">
+              <div className="field_categories_title">카테고리</div>
+              <div className=" field_categories_table">
+                <div className="field_categories_all">전체</div>
+                <div className="field_categories_dev">개발</div>
+                <div className="field_categories_travel">여행</div>
+                <div className="field_categories_cook">요리</div>
+              </div>
+            </div>
           </div>
-          <div className="field_potato_count">
-            <div className="field_potato_count_good">
-              정상 감자 개수 : {this.state.goodPotato}
+          <div className="field_right">
+            <div className="field_right_menu">
+              <div
+                className="field_right_menu_mypage"
+                onClick={this.goToMyPage}
+              >
+                마이페이지
+              </div>
+              <div
+                className="field_right_menu_manual"
+                onClick={this.goToInstruction}
+              >
+                사용 설명서
+              </div>
+              <div
+                className="field_right_menu_logout"
+                onClick={this.signOutHandler}
+              >
+                로그아웃
+              </div>
             </div>
-            <div className="field_potato_count_bad">
-              썩은 감자 개수 : {this.state.badPotato}
+            <div className="field_right_fields">
+              <div className="field_right_bar">
+                <button
+                  onClick={this.modalOpenOrClose}
+                  className="field_right_field_add_btn"
+                >
+                  밭 추가
+                </button>
+                <button className="field_right_field_remove_btn">
+                  밭 삭제
+                </button>
+              </div>
+
+              <div className="field_right_field_contents">
+                {fields.map((f) => {
+                  let potatoCnt = 0;
+                  potatoes.forEach((potato) => {
+                    if (f.id === potato.fieldId) {
+                      potatoCnt++;
+                    }
+                  });
+                  return (
+                    <FieldContents
+                      key={f.id}
+                      fieldId={f.id}
+                      potatoClickHandler={this.potatoClickHandler}
+                      fieldName={f.fieldName}
+                      fieldDesc={f.fieldDesc}
+                      potatoCount={potatoCnt} // 여기 서버 로직 바뀐 후 수정 해야 함.
+                      category={f.category}
+                    />
+                  );
+                })}
+              </div>
             </div>
-          </div>
-          <div className="field_categories">
-            <div className="field_categories_title">카테고리</div>
-            <div className=" field_categories_table">
-              <div className="field_categories_all">전체</div>
-              <div className="field_categories_dev">개발</div>
-              <div className="field_categories_travel">여행</div>
-              <div className="field_categories_cook">요리</div>
-            </div>
+            {this.state.isAddFieldClicked ? this.AddFieldModalOpen() : ""}
           </div>
         </div>
-        <div className="field_right">
-          <div className="field_right_menu">
-            <div className="field_right_menu_mypage" onClick={this.goToMyPage}>
-              마이페이지
+      );
+
+      // 뱃 감자 else 추가
+    } else {
+      // 봄결님 & 인수 추가코드 : 썩은 감자 필터 코드 {
+      let badpotatoes = [];
+      potatoes.forEach((badPotato) => {
+        if (badPotato.status === "bad") {
+          badPotato.isChecked = false;
+          badpotatoes.push(badPotato);
+        }
+      });
+      // }
+
+      return (
+        <div className="field_entire">
+          <div className="field_left">
+            <div className="field_profile">
+              <img
+                className="field_profile_photo"
+                src={potatoLogo}
+                alt="이미지를 찾을 수 없습니다."
+                onClick={this.goToField}
+              />
             </div>
-            <div
-              className="field_right_menu_manual"
-              onClick={this.goToInstruction}
-            >
-              사용 설명서
+            <div className="field_potato_count">
+              <div className="field_potato_count_good">
+                정상 감자 개수 : {this.state.goodPotato}
+              </div>
+
+              {/* 봄결님 & 인수 추가코드 : onClick = {this.BadPotatoFilter} */}
+              <div
+                className="field_potato_count_bad"
+                onClick={this.BadPotatoFilter}
+              >
+                썩은 감자 개수 : {this.state.badPotato}
+              </div>
             </div>
-            <div
-              className="field_right_menu_logout"
-              onClick={this.signOutHandler}
-            >
-              로그아웃
+            <div className="field_categories">
+              <div className="field_categories_title">카테고리</div>
+              <div className=" field_categories_table">
+                <div className="field_categories_all">전체</div>
+                <div className="field_categories_dev">개발</div>
+                <div className="field_categories_travel">여행</div>
+                <div className="field_categories_cook">요리</div>
+              </div>
             </div>
           </div>
-          <div className="field_right_fields">
-            <div className="field_right_bar">
-              <button
-                onClick={this.modalOpenOrClose}
-                className="field_right_field_add_btn"
+          <div className="field_right">
+            <div className="field_right_menu">
+              <div
+                className="field_right_menu_mypage"
+                onClick={this.goToMyPage}
               >
-                밭 추가
-              </button>
-              <button className="field_right_field_remove_btn">밭 삭제</button>
+                마이페이지
+              </div>
+              <div
+                className="field_right_menu_manual"
+                onClick={this.goToInstruction}
+              >
+                사용 설명서
+              </div>
+              <div
+                className="field_right_menu_logout"
+                onClick={this.signOutHandler}
+              >
+                로그아웃
+              </div>
             </div>
 
-            <div className="field_right_field_contents">
-              {fields.map((f) => {
-                let potatoCnt = 0;
-                potatoes.forEach((potato) => {
-                  if (f.id === potato.fieldId) {
-                    potatoCnt++;
-                  }
-                });
-                return (
-                  <FieldContents
-                    key={f.id}
-                    fieldId={f.id}
-                    potatoClickHandler={this.potatoClickHandler}
-                    fieldName={f.fieldName}
-                    fieldDesc={f.fieldDesc}
-                    potatoCount={potatoCnt} // 여기 서버 로직 바뀐 후 수정 해야 함.
-                    category={f.category}
-                  />
-                );
-              })}
-            </div>
+            {<BadPotatoFilter BadPotatoFilterObjArr={badpotatoes} />}
+            {this.state.isAddFieldClicked ? this.AddFieldModalOpen() : ""}
           </div>
-          {this.state.isAddFieldClicked ? this.AddFieldModalOpen() : ""}
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 
