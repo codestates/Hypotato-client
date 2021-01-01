@@ -6,6 +6,9 @@ import Field from "./component/Field";
 import Mypage from "./component/Mypage";
 import Instruction from "./component/Instruction";
 import EditInfo from "./component/EditInfo";
+import AddPotato from "./component/AddPotato";
+import Potato from "./component/Potato";
+
 import axios from "axios";
 import "./App.css";
 import "./reset.css";
@@ -59,6 +62,16 @@ class App extends Component {
             exact
             path="/editinfo"
             render={(routeProps) => <EditInfo {...routeProps} />}
+          />
+          <Route
+            exact
+            path="/addpotato"
+            render={(routeProps) => <AddPotato {...routeProps} />}
+          />
+          <Route
+            exact
+            path="/potato"
+            render={(routeProps) => <Potato {...routeProps} />}
           />
         </Switch>
       </div>

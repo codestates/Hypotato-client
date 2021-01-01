@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import potatoLogo from "../image/potato.png";
 import fieldImage from "../image/field.png";
 import tresh from "../image/tresh.png";
-import "./Mypage.css";
-import axios from "axios"; 
+import axios from "axios";
+import "./Mypage.css"; 
 
 class Mypage extends Component {
   constructor(props) {
@@ -30,14 +30,12 @@ class Mypage extends Component {
   goToField() {
     axios({
       method: "get",
-      url: ` https://www.hypotato.com/userinfo`,
+      url: ` https://hypotato.com/userinfo`,
       withCredentials: true,
-    })
-    .then(
-      (userInfo) => {
-        this.props.history.push("/field", {...userInfo.data.data}); // 어디서든지 감자 프로필 이미지를 누르면 밭으로 가는데, 그 때 다시 밭 정보를 서버로부터 받아서 history push될 때 같이 보내주기 위한 로직.
-      }
-    )
+    }).then((userInfo) => {
+      this.setState({ isFieldClicked: false });
+      this.props.history.push("/field", { ...userInfo.data.data }); // 어디서든지 감자 프로필 이미지를 누르면 밭으로 가는데, 그 때 다시 밭 정보를 서버로부터 받아서 history push될 때 같이 보내주기 위한 로직.
+    });
   }
 
   goToMyPage() {
@@ -53,7 +51,13 @@ class Mypage extends Component {
   }
 
   signOutHandler() {
-    this.props.history.push("/");
+    axios({
+      method: "post",
+      url: `https://hypotato.com/signout`,
+      withCredentials: true,
+    }).then(() => {
+      this.props.history.push("/");
+    });
   }
 
   render() {

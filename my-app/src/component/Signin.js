@@ -8,6 +8,9 @@ class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      email: "",
+      password: "",
+      userinfo: null,
     };
 
     this.formInputValue = this.formInputValue.bind(this);
@@ -21,29 +24,25 @@ class Signin extends React.Component {
   }
 
   signInSubmit() {
-    const { email, passWord } = this.state;
-    console.log(email, passWord);
+    const { email, password, userinfo } = this.state;
+
     axios({
       method: "post",
-      url: ` https://www.hypotato.com/signin`,
-      headers: { "Content-Type": "application/json" },
+      url: `https://hypotato.com/signin`,
+      data: { email, password },
       withCredentials: true,
-      data: { email: email, password: passWord },
     }).then((res) => {
-      console.log("로그인 후 = ", res);
       axios({
         method: "get",
-        url: ` https://www.hypotato.com/userinfo`,
+        url: `https://hypotato.com/userinfo`,
         withCredentials: true,
       })
         .then((userinfo) => {
-          console.log("userinfo 입니다 = ", userinfo.data.data);
-          this.props.history.push("/field", {...userinfo.data.data}); 
+          console.log("userinfo 입니다 = ", userinfo);
+          this.props.history.push("/field", { ...userinfo.data.data });
         })
         .catch((err) => console.log(err));
-    });
-
-    // this.props.history.push("/field"); // Axios 요청 없이 테스트 할 때, 
+    }); // 나중에 이 명령을 axios요청 성공시 작동할 수 있도록 then() 안으로 옮겨야 함.
   }
 
   signUpPage() {
@@ -51,7 +50,7 @@ class Signin extends React.Component {
   }
 
   render() {
-    const { email, passWord } = this.state;
+    const { email, password } = this.state;
     return (
       <>
         <div className="sigin_main">
@@ -80,9 +79,9 @@ class Signin extends React.Component {
             <div className="sign_password">Password</div>
             <input
               className="signin_input_pw"
-              name="passWord"
+              name="password"
               type="password"
-              value={passWord}
+              value={password}
               maxLength="14"
               onChange={this.formInputValue}
             />

@@ -13,8 +13,12 @@ class FieldContents extends Component {
   }
 
   render() {
+    console.log(this.props.fielId);
     return (
-      <div onClick={() => this.props.potatoClickHandler(this.state.fieldId)} className="field_content">
+      <div
+        onClick={() => this.props.potatoClickHandler(this.props.fieldId)}
+        className="field_content"
+      >
         <img
           className="field_image"
           src={fieldImage}

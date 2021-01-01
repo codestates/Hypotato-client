@@ -13,6 +13,8 @@ class Signup extends React.Component {
       inspect: "",
       differ: false,
       pwCheck: true,
+      nicknameChk: false,
+      emailChk: false,
     };
 
     this.nicknameChecker = this.nicknameChecker.bind(this);
@@ -23,10 +25,42 @@ class Signup extends React.Component {
 
   nicknameChecker() {
     // 닉네임 "check"버튼 눌렀을 때 서버로 중복체크 요청할 수 있는 메소드 만들어야 함.
+    axios({
+      method: "post",
+      url: `https://hypotato.com/signup`,
+      data: { nickname: this.state.nickname, chk: "nicknameChk" },
+      withCredentials: true,
+    }).then((res) => {
+      console.log(res.data.chkNickname);
+      if (res.data.chkNickname === "nicknameOk") {
+        this.setState({
+          nicknameChk: true,
+        });
+        alert("사용 가능한 닉네임입니다.");
+      } else {
+        alert("중복되는 닉네임이 있습니다.");
+      }
+    });
   }
 
   emailChecker() {
     // 이메일 "check"버튼 눌렀을 때 서버로 중복체크 요청할 수 있는 메소드 만들어야 함.
+    axios({
+      method: "post",
+      url: `https://hypotato.com/signup`,
+      data: { email: this.state.email, chk: "emailChk" },
+      withCredentials: true,
+    }).then((res) => {
+      console.log(res.data.chkEmail);
+      if (res.data.chkEmail === "emailOk") {
+        this.setState({
+          emailChk: true,
+        });
+        alert("확인되었습니다.");
+      } else {
+        alert("중복되는 이메일이 있습니다.");
+      }
+    });
   }
 
   formInputValue(e) {
@@ -37,28 +71,34 @@ class Signup extends React.Component {
   }
 
   signUpSubmit() {
-    // const { nickname, password, email, inspect } = this.state;
+    const {
+      nickname,
+      password,
+      email,
+      inspect,
+      nicknameChk,
+      emailChk,
+    } = this.state;
     // if (!password.match("^(?=.*[@$!%*?&])[@$!%*?&]{8,}$")) {
     //   this.setState({ pwCheck: false });
     // }
 
     // if (password !== inspect) {
     //   this.setState({ differ: true });
-    // } else if (this.state.password !== "" && this.state.inspect !== "") {
-    //   // 서버에 사인업 axios 요청.
-    //   axios({
-    //     method: "post",
-    //     url: ` https://www.hypotato.com/signup`,
-    //     data: { email: email, nickname: nickname, password: password },
-    //     withCredentials: true,
-    //   })
-    //   .then(
-    //     (res) => {console.log(res)
-    //     this.props.history.push("/")
-    //     }) // 나중에 axios요청 then() 안쪽으로 보내야 함.
-    // }
+    // } else
 
-    this.props.history.push("/") // axios요청 없이 테스트 하기위한 용도, axios 정상작동되면 지워야 함.
+    if (nicknameChk === true && emailChk === true) {
+      axios({
+        method: "post",
+        url: `https://hypotato.com/signup`,
+        data: { email: email, nickname: nickname, password: password },
+        withCredentials: true,
+      }).then(() => {
+        this.props.history.push("/");
+      });
+    } else {
+      alert("중복검사를 실행해 주세요.");
+    }
   }
 
   render() {
