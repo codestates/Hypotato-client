@@ -90,6 +90,13 @@
   margin-top: 7px;
 }
 
+.field_desc_value {
+  white-space: nowrap;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .field_potato_summary {
   /* border: solid; */
   width: 60px;

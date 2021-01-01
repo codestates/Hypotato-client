@@ -7,12 +7,14 @@ import fieldImage from "../image/field.png";
 class FieldContents extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      fieldId: this.props.fieldId,
+    };
   }
 
   render() {
     return (
-      <div onClick={this.props.potatoRenderHandler} className="field_content">
+      <div onClick={() => this.props.potatoClickHandler(this.state.fieldId)} className="field_content">
         <img
           className="field_image"
           src={fieldImage}

@@ -45,13 +45,12 @@
 .inst_value {
   display: flex;
   border: solid #cdb18e;
-  display: flex;
   flex: 7;
+  height: 900px;
   width: 750px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 900px;
   border-radius: 20px;
   display: flex;
   font-weight: bold;

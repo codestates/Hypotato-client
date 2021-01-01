@@ -2,10 +2,33 @@ import React from "react";
 import potatoLogo from "../image/potato.png";
 import "./Instruction.css";
 import Typing from "react-typing-animation";
+import axios from 'axios';
 
-const Instruction = ({history}) => {
-  const goToMyPage = () => { history.push("/mypage") }
-  const goToInstruction = () => { history.push("/instruction") }
+const Instruction = ({ history }) => {
+  const goToMyPage = () => {
+    history.push("/mypage");
+  };
+
+  const goToInstruction = () => {
+    history.push("/instruction");
+  };
+
+  const goToField = () => {
+    axios({
+      method: "get",
+      url: ` https://www.hypotato.com/userinfo`,
+      withCredentials: true,
+    })
+    .then(
+      (userInfo) => {
+        history.push("/field", {...userInfo.data.data}); // 어디서든지 감자 프로필 이미지를 누르면 밭으로 가는데, 그 때 다시 밭 정보를 서버로부터 받아서 history push될 때 같이 보내주기 위한 로직.
+      }
+    )
+  };
+
+  const signOutHandler = () => {
+    history.push("/");
+  };
 
   return (
     <div className="field_entire">
@@ -15,6 +38,7 @@ const Instruction = ({history}) => {
             className="field_profile_photo"
             src={potatoLogo}
             alt="이미지를 찾을 수 없습니다."
+            onClick={goToField}
           />
         </div>
         <div className="field_potato_count">
@@ -33,9 +57,15 @@ const Instruction = ({history}) => {
       </div>
       <div className="field_right">
         <div className="field_right_menu">
-          <div className="field_right_menu_mypage" onClick={goToMyPage}>마이페이지</div>
-          <div className="field_right_menu_manual" onClick={goToInstruction}>사용 설명서</div>
-          <div className="field_right_menu_logout">로그아웃</div>
+          <div className="field_right_menu_mypage" onClick={goToMyPage}>
+            마이페이지
+          </div>
+          <div className="field_right_menu_manual" onClick={goToInstruction}>
+            사용 설명서
+          </div>
+          <div className="field_right_menu_logout" onClick={signOutHandler}>
+            로그아웃
+          </div>
         </div>
         <div className="field_right_fields, inst_main">
           <div className="inst_modal">

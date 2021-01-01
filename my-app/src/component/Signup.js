@@ -7,21 +7,21 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nickName: "",
+      nickname: "",
       email: "",
-      passWord: "",
+      password: "",
       inspect: "",
       differ: false,
       pwCheck: true,
     };
 
-    this.nickChecker = this.nickChecker.bind(this);
+    this.nicknameChecker = this.nicknameChecker.bind(this);
     this.emailChecker = this.emailChecker.bind(this);
-    this.signUpHandler = this.signUpHandler.bind(this);
-    this.signUpRequestHanlder = this.signUpRequestHanlder.bind(this);
+    this.formInputValue = this.formInputValue.bind(this);
+    this.signUpSubmit = this.signUpSubmit.bind(this);
   }
 
-  nickChecker() {
+  nicknameChecker() {
     // 닉네임 "check"버튼 눌렀을 때 서버로 중복체크 요청할 수 있는 메소드 만들어야 함.
   }
 
@@ -29,36 +29,40 @@ class Signup extends React.Component {
     // 이메일 "check"버튼 눌렀을 때 서버로 중복체크 요청할 수 있는 메소드 만들어야 함.
   }
 
-  signUpHandler(e) {
+  formInputValue(e) {
     const { name, value } = e.target;
     this.setState({
       [name]: value,
     });
   }
 
-  signUpRequestHanlder() {
-    // const { nickName, passWord, email, inspect } = this.state;
-    // // if (!passWord.match("^(?=.*[@$!%*?&])[@$!%*?&]{8,}$")) {
-    // //   this.setState({ pwCheck: false });
-    // // }
+  signUpSubmit() {
+    // const { nickname, password, email, inspect } = this.state;
+    // if (!password.match("^(?=.*[@$!%*?&])[@$!%*?&]{8,}$")) {
+    //   this.setState({ pwCheck: false });
+    // }
 
-    // if (passWord !== inspect) {
+    // if (password !== inspect) {
     //   this.setState({ differ: true });
-    // } else if(this.state.passWord !== "" &&this.state.inspect !== "") {
+    // } else if (this.state.password !== "" && this.state.inspect !== "") {
     //   // 서버에 사인업 axios 요청.
     //   axios({
     //     method: "post",
-    //     url: `https://3.133.83.100:4000/signup`,
-    //     data: { email: email, nickname: nickName, password: passWord },
+    //     url: ` https://www.hypotato.com/signup`,
+    //     data: { email: email, nickname: nickname, password: password },
     //     withCredentials: true,
-    //   }).then((res) => console.log(res));
+    //   })
+    //   .then(
+    //     (res) => {console.log(res)
+    //     this.props.history.push("/")
+    //     }) // 나중에 axios요청 then() 안쪽으로 보내야 함.
     // }
 
-    this.props.history.push("/"); // 나중에 axios요청 then() 안쪽으로 보내야 함. 
+    this.props.history.push("/") // axios요청 없이 테스트 하기위한 용도, axios 정상작동되면 지워야 함.
   }
 
   render() {
-    const { nickName, email, passWord, inspect } = this.state;
+    const { nickname, email, password, inspect } = this.state;
     return (
       <div className="signup_body">
         <div className="signup_main">
@@ -76,13 +80,13 @@ class Signup extends React.Component {
             <div className="signup_nickname">Nick Name</div>
             <input
               className="signup_input"
-              name="nickName"
+              name="nickname"
               type="text"
-              value={nickName}
+              value={nickname}
               maxLength="8"
-              onChange={this.signUpHandler}
+              onChange={this.formInputValue}
             />
-            <button onClick={this.nickChecker} className="nickname_check">
+            <button onClick={this.nicknameChecker} className="nickname_check">
               check
             </button>
           </div>
@@ -92,9 +96,9 @@ class Signup extends React.Component {
             <input
               className="signup_input"
               name="email"
-              type="text"
+              type="email"
               value={email}
-              onChange={this.signUpHandler}
+              onChange={this.formInputValue}
             />
             <button onClick={this.emailChecker} className="email_check">
               check
@@ -102,15 +106,15 @@ class Signup extends React.Component {
           </div>
 
           <div>
-            <div className="sign_password">Password</div>
+            <div className="sign_password">password</div>
             <div>
               <input
                 className="signup_pw"
-                name="passWord"
+                name="password"
                 type="password"
-                value={passWord}
+                value={password}
                 maxLength="14"
-                onChange={this.signUpHandler}
+                onChange={this.formInputValue}
               />
             </div>
             <input
@@ -119,7 +123,7 @@ class Signup extends React.Component {
               type="password"
               value={inspect}
               maxLength="14"
-              onChange={this.signUpHandler}
+              onChange={this.formInputValue}
             />
             {this.state.differ ? (
               <div className="pw-differ"> 비밀번호가 다릅니다. </div>
@@ -134,7 +138,7 @@ class Signup extends React.Component {
             )}
           </div>
 
-          <button onClick={this.signUpRequestHanlder} className="signup_button">
+          <button onClick={this.signUpSubmit} className="signup_button">
             Sign UP
           </button>
         </div>

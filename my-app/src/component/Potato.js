@@ -9,6 +9,8 @@ class Potato extends Component {
   }
 
   render() {
+    const { potatoName, potatoDesc, status } = this.props
+    console.log(potatoName, potatoDesc);
     return (
       <div className="potato_component_body">
         <div className="potato_component_body_left">
@@ -21,12 +23,12 @@ class Potato extends Component {
         <div className="potato_component_body_right">
           <div className="potato_component_body_right_potato-url">
             <span className="potato_component_body_right_potato-url_text"> 
-            www.google.com
+            {potatoName}
             </span>
           </div>
           <div className="potato_component_body_right_potato-desc">
             <span className="potato_component_body_right_potato-desc_text">
-              구글 웹사이트에 접속할 수 있는 웹 사이트 입니다.
+              {potatoDesc}
             </span>
           </div>
         </div>
