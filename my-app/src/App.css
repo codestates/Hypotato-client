@@ -1,0 +1,30 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./image/background-original.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+.body-for-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./image/background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  animation: animation 100s linear infinite;
+}
+
+@keyframes animation {
+  100% {
+    background-position: 0px +3000px;
+  }
+}
