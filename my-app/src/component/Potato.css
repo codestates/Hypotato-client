@@ -1,0 +1,141 @@
+.potato_component_body {
+  display: flex;
+  flex: 1;
+  margin: 20px 10px 10px 50px;
+  border: solid #cdb18e;
+  border-radius: 20px;
+  max-width: 93%;
+  min-width: 93%;
+  min-height: 170px;
+  box-shadow: 3px 5px 10px #7c7979;
+  overflow: hidden;
+  transition: all ease 150ms;
+}
+
+.potato_component_body:hover {
+  transform: scale(1.02);
+}
+
+/* .potato_component {
+  overflow: scroll;
+} */
+
+.field_profile_photo {
+  flex: 1;
+  width: 200px;
+}
+
+.field_right_potato_checkbox {
+  position: sticky;
+  right: 87rem;
+  top: 13px;
+  transform: scale(2);
+  margin-top: 16px;
+}
+
+.PotatoChkBox {
+  position: relative;
+  top: 4.55rem;
+  left: 1rem;
+  border-radius: 10px;
+  transform: scale(2);
+}
+
+.potato_component_body_left {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  /* border: solid; */
+}
+
+.potato_component_body_left_image {
+  width: 180px;
+  padding-left: 25px;
+}
+
+.potato_component_body_right {
+  flex: 6;
+  /* border: solid; */
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+}
+
+.potato_component_body_right_potato-url {
+  flex: 1;
+  border: solid #cdb18e;
+  border-radius: 100px;
+  margin: 10px 10px 5px 10px;
+  display: flex;
+  padding-left: 25px;
+  align-items: center;
+  font-size: 25px;
+  color: #ffffff;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  box-shadow: 2px 2px 0px #7c7979;
+  padding-top: -10px;
+}
+
+.potato_component_body_right_potato-desc {
+  flex: 1;
+  border: solid #cdb18e;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  margin: 5px 10px 10px 10px;
+  padding-left: 25px;
+  font-size: 20px;
+  color: #ffffff;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  box-shadow: 2px 2px 0px #7c7979;
+  padding-top: 3px;
+}
+
+.potato_component_body_right_potato-url_text {
+  font-family: "Cute Font", cursive;
+  font-size: 40px;
+  margin: 10px 10px 10px 10px;
+  text-decoration: none;
+}
+
+.potato_component_body_right_potato-desc_text {
+  font-family: "Cute Font", cursive;
+  font-size: 40px;
+  margin: 10px 10px 10px 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: yellowgreen;
+}
+
+.potato_component_body_left_image {
+  margin-top: 10px;
+  width: 180px;
+  height: 150px;
+}
+
+.potato_component_body_left_image2 {
+  width: 115px;
+  height: 135px;
+  margin-top: 13px;
+  margin-left: 25px;
+  /* border: solid; */
+}
+
+.field_right_potato_add_btn,
+.field_right_potato_remove_btn,
+.field_right_potato_field-delete_btn {
+  height: 30px;
+  margin-top: 7.5px;
+  margin-right: 25px;
+  width: 100px;
+  padding-top: 4px;
+  border-radius: 30px;
+  box-shadow: 3px 2px 0px #7c7979;
+  font-size: 17px;
+  background-color: #e3d1b4;
+  color: #cdb18e;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-weight: bold;
+}
