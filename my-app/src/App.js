@@ -24,78 +24,126 @@ class App extends Component {
     this.classNameChanger = this.classNameChanger.bind(this);
   }
 
-
-  
   classNameChanger() {
-    if(this.state.classNameForAnimation === "body") {
-      this.setState({classNameForAnimation: "body-for-animation"})
+    if (this.state.classNameForAnimation === "body") {
+      this.setState({ classNameForAnimation: "body-for-animation" });
     } else {
-      this.setState({classNameForAnimation: "body"})
+      this.setState({ classNameForAnimation: "body" });
     }
   }
 
   render() {
     return (
-      <div className={this.state.classNameForAnimation} >
+      <div className={this.state.classNameForAnimation}>
         <Switch>
           <Route
             exact
             path="/"
-            render={(routeProps) => <Signin {...routeProps} classNameChanger={this.classNameChanger} />}
+            render={(routeProps) => (
+              <Signin
+                {...routeProps}
+                classNameChanger={this.classNameChanger}
+              />
+            )}
           />
           <Route
             exact
             path="/signup"
-            render={(routeProps) => <Signup {...routeProps} classNameChanger={this.classNameChanger} />}
+            render={(routeProps) => (
+              <Signup
+                {...routeProps}
+                classNameChanger={this.classNameChanger}
+              />
+            )}
           />
           <Route
             exact
             path="/mypage"
-            render={(routeProps) => <Mypage {...routeProps} classNameChanger={this.classNameChanger} />}
+            render={(routeProps) => (
+              <Mypage
+                {...routeProps}
+                classNameChanger={this.classNameChanger}
+              />
+            )}
           />
           <Route
             exact
             path="/instruction"
-            render={(routeProps) => <Instruction {...routeProps} classNameChanger={this.classNameChanger} />}
+            render={(routeProps) => (
+              <Instruction
+                {...routeProps}
+                classNameChanger={this.classNameChanger}
+              />
+            )}
           />
           <Route
             exact
             path="/field"
-            render={(routeProps) => <Field {...routeProps} classNameChanger={this.classNameChanger} />}
+            render={(routeProps) => (
+              <Field {...routeProps} classNameChanger={this.classNameChanger} />
+            )}
           />
           <Route
             exact
             path="/mypage"
-            render={(routeProps) => <Mypage {...routeProps} classNameChanger={this.classNameChanger} />}
+            render={(routeProps) => (
+              <Mypage
+                {...routeProps}
+                classNameChanger={this.classNameChanger}
+              />
+            )}
           />
           <Route
             exact
             path="/instruction"
-            render={(routeProps) => <Instruction {...routeProps} classNameChanger={this.classNameChanger} />}
+            render={(routeProps) => (
+              <Instruction
+                {...routeProps}
+                classNameChanger={this.classNameChanger}
+              />
+            )}
           />
           <Route
             exact
             path="/editinfo"
-            render={(routeProps) => <EditInfo {...routeProps} classNameChanger={this.classNameChanger} />}
+            render={(routeProps) => (
+              <EditInfo
+                {...routeProps}
+                classNameChanger={this.classNameChanger}
+              />
+            )}
           />
           <Route
             exact
             path="/addpotato"
-            render={(routeProps) => <AddPotato {...routeProps} classNameChanger={this.classNameChanger} />}
+            render={(routeProps) => (
+              <AddPotato
+                {...routeProps}
+                classNameChanger={this.classNameChanger}
+              />
+            )}
           />
           <Route
             exact
             path="/potato"
-            render={(routeProps) => <Potato {...routeProps} classNameChanger={this.classNameChanger} />}
+            render={(routeProps) => (
+              <Potato
+                {...routeProps}
+                classNameChanger={this.classNameChanger}
+              />
+            )}
           />
           <Route
             exact
             path="/badpotato"
-            render={(routeProps) => <Badpotato {...routeProps} classNameChanger={this.classNameChanger} />}
+            render={(routeProps) => (
+              <Badpotato
+                {...routeProps}
+                classNameChanger={this.classNameChanger}
+              />
+            )}
           />
-          <Route
-            render={(routeProps) => <NotFoundPage {...routeProps} />}
-          />
+          <Route render={(routeProps) => <NotFoundPage {...routeProps} />} />
         </Switch>
       </div>
     );
