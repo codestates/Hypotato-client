@@ -35,17 +35,20 @@
 
 # **Workflow**
 
-## Client Flow
+<details>
+<summary>Client Flow</summary>
+<img src="https://user-images.githubusercontent.com/55384837/107680638-7584a200-6ce1-11eb-9d4a-3f3552f5947b.jpg" alt="프론트엔드" />
+</details>
 
-<img src="https://user-images.githubusercontent.com/69799645/106236833-f7d08900-6240-11eb-85b5-3748fbf819bf.png" alt='flow' /></a>
+<details>
+<summary>Server workflow</summary>
+<img src="https://user-images.githubusercontent.com/69799645/107606491-91ecf400-6c79-11eb-8141-1322abd2c918.png" alt="백엔드" />
+</details>
 
-## Server workflow
-
-![서버 workflow](https://user-images.githubusercontent.com/69799645/106230981-ffd5fc00-6233-11eb-918f-64e729a54852.png)
-
-## Deploy
-
-![배포](https://user-images.githubusercontent.com/69799645/106701514-23c98100-662a-11eb-94c5-61ca2ef0c964.png)
+<details>
+<summary>Deployment</summary>
+<img src="https://user-images.githubusercontent.com/69799645/107606971-22780400-6c7b-11eb-837d-7b0093dae78d.png" alt="배포" />
+</details>
 
 ---
 
