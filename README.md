@@ -54,8 +54,6 @@
 
 # **기능 시연**
 
-## 클릭해서 펼쳐주세요!
-
 <details>
 <summary>폴더 관리</summary>
 <ul>
