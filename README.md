@@ -57,26 +57,24 @@
 ## 클릭해서 펼쳐주세요!
 
 <details>
-<summary>마이페이지</summary>
-<img src="https://user-images.githubusercontent.com/69799645/106683247-7fcede00-6607-11eb-949a-91e5db6eb467.gif" alt="마이페이지" />
+<summary>폴더 관리</summary>
+<ul>
+<img src="https://user-images.githubusercontent.com/55384837/107677330-7ca9b100-6cdd-11eb-87c1-4da71889781b.gif"/>
+</ul>
 </details>
 
 <details>
-<summary>게시글작성</summary>
-<img src="https://user-images.githubusercontent.com/69799645/106683673-4c408380-6608-11eb-9162-cec875cbeacd.gif" alt="게시글작성" />
+<summary>링크 관리</summary>
+<ul>
+<img src="https://user-images.githubusercontent.com/55384837/107677375-892e0980-6cdd-11eb-9442-b4d5301c50cb.gif"/>
+</ul>
 </details>
 
 <details>
-<summary>프로젝트 게시글</summary>
-<img src="https://user-images.githubusercontent.com/69799645/106812876-9c285480-66b3-11eb-8735-7566a2bc9c75.gif" alt="프로젝트" />
-</details>
-
-<details>
-<summary>스터디 게시글</summary>
-<img src="https://user-images.githubusercontent.com/69799645/106683701-5793af00-6608-11eb-9b55-c681f106dd6e.gif" alt="스터디" />
-</details>
-
-<details>
-<summary>Q/A 게시글</summary>
-<img src="https://user-images.githubusercontent.com/69799645/106683721-61b5ad80-6608-11eb-9633-99669c8e2649.gif" alt="Q/A" />
+<summary>정지 링크 필터링</summary>
+<ul>
+<img src="https://user-images.githubusercontent.com/55384837/107677420-977c2580-6cdd-11eb-9713-8252be79a6b8.gif"/>
+<br/>
+* 정지 링크 : 링크 생성일 기준 7일동안 방문하지 않은 링크
+</ul>
 </details>
